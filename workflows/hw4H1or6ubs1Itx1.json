@@ -1,0 +1,1420 @@
+{
+  "active": true,
+  "connections": {
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store1": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Transformar a Binario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split by Page": {
+      "main": [
+        [
+          {
+            "node": "Britrix File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Gemini 2.5 flash": {
+      "main": [
+        [
+          {
+            "node": "Split by Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match Bitrix File + Build Metadata": {
+      "main": [
+        [
+          {
+            "node": "Prepare Documents for Pinecone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Britrix File": {
+      "main": [
+        [
+          {
+            "node": "Match Bitrix File + Build Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Documents for Pinecone": {
+      "main": [
+        [
+          {
+            "node": "Merge PDF & Excel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subir Archivo": {
+      "main": [
+        [
+          {
+            "node": "Indexar DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transformar a Binario": {
+      "main": [
+        [
+          {
+            "node": "Subir Archivo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Detect File Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare PDF Binary": {
+      "main": [
+        [
+          {
+            "node": "Extract Gemini 2.5 flash",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detect File Type": {
+      "main": [
+        [
+          {
+            "node": "Is Excel?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Excel?": {
+      "main": [
+        [
+          {
+            "node": "Download PDF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download PDF": {
+      "main": [
+        [
+          {
+            "node": "Prepare PDF Binary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download xlsx": {
+      "main": [
+        []
+      ]
+    },
+    "Process Sheet": {
+      "main": [
+        [
+          {
+            "node": "Prepare Excel Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge PDF & Excel": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Excel Docs": {
+      "main": [
+        [
+          {
+            "node": "Merge PDF & Excel",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-17T17:02:27.231Z",
+  "id": "hw4H1or6ubs1Itx1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "KB_ISO27001",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -16,
+        1248
+      ],
+      "id": "44aebb64-316b-4e82-9395-34740bb9b411",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2608,
+        160
+      ],
+      "id": "c51f3568-73dc-487e-b4e0-97b069a7386f",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "content": "## 📊 PROCESAMIENTO ISO27001 - METADATA COMPLETA\n\n### ✅ Correcciones aplicadas:\n1. **Metadata del archivo preservada** en todos los nodos\n2. **source_url real** desde Google Drive\n3. **document name correcto** desde fileData\n4. **Tracking completo** en Google Sheets\n\n### 📋 Metadata en Pinecone:\n- document: Nombre del archivo\n- fileId: ID de Google Drive\n- source_url: Link directo al archivo\n- page: Número de página\n- fragment: Índice del fragmento\n- section: Clasificación (null por ahora)\n- textLength: Longitud del texto\n- compliance: ISO27001:2022",
+        "height": 800,
+        "width": 976,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -528,
+        960
+      ],
+      "typeVersion": 1,
+      "id": "3ce40e89-0dcb-42e2-98e6-f7102b1a3eff",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## PROCESSING",
+        "height": 800,
+        "width": 1840
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        592,
+        -64
+      ],
+      "typeVersion": 1,
+      "id": "ac58beeb-c56a-4c28-a888-3a81b3dda8de",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2000,
+        336
+      ],
+      "id": "1973360b-47cb-496e-a401-88475e0593c0",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "iso-27001xlsx",
+          "mode": "list",
+          "cachedResultName": "iso-27001xlsx"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        2000,
+        160
+      ],
+      "id": "50c611a5-cfa3-4c21-8016-3fe4b80ca04c",
+      "name": "Pinecone Vector Store1",
+      "credentials": {
+        "pineconeApi": {
+          "id": "pOOSmWGE6fHNq5oR",
+          "name": "PineconeApi EA"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        240,
+        1216
+      ],
+      "id": "7d7217f5-3a88-454f-9f2f-c2fb63c76497",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1Lix3SSQR-jZBR-A5PkmG6KbAozKhAGKm",
+          "mode": "list",
+          "cachedResultName": "ISO27001_mobilvendor_KB_gemini",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1Lix3SSQR-jZBR-A5PkmG6KbAozKhAGKm"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        1456
+      ],
+      "id": "1c3cf7ec-b160-42f8-8d7d-dcf3ac07085f",
+      "name": "Google Drive Trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1eFsniRtrOQ6mho4-9tyTPFdPd_Hlz7gmDxayAldA4w8",
+          "mode": "list",
+          "cachedResultName": "KB ISO27001"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "file_name": "={{ $('Download file').first().json.originalFilename }}",
+            "file_id": "={{ $('Download file').first().json.id }}",
+            "pinecone_index": "iso-27001",
+            "processing_start": "={{ $('Download file').first().json.createdTime }}",
+            "processing_end": "={{ $now.toISO() }}",
+            "status": " success",
+            "source_url": "={{ $('Match Bitrix File + Build Metadata').first().json.bitrixViewUrl }}",
+            "total_page": "={{ $('Split by Page').all().length }}",
+            "total_fragments": "={{ $('Split by Page').all().length }}",
+            "total_text_lenght": "={{ $('Split by Page').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) }}",
+            "avg_fragment_size": "={{ Math.round($('Split by Page').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) / $('Split by Page').all().length) }}",
+            "file_size_bytes": "={{ $('Download file').first().json.size }}",
+            "mime_type": "={{ $('Download file').first().json.mimeType }}",
+            "md5_checksum": "={{ $('Download file').first().json.md5Checksum }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "file_name",
+              "displayName": "file_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "file_id",
+              "displayName": "file_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_url",
+              "displayName": "source_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pinecone_index",
+              "displayName": "pinecone_index",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "processing_start",
+              "displayName": "processing_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "processing_end",
+              "displayName": "processing_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_page",
+              "displayName": "total_page",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_fragments",
+              "displayName": "total_fragments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_text_lenght",
+              "displayName": "total_text_lenght",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "avg_fragment_size",
+              "displayName": "avg_fragment_size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "file_size_bytes",
+              "displayName": "file_size_bytes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mime_type",
+              "displayName": "mime_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "md5_checksum",
+              "displayName": "md5_checksum",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2320,
+        160
+      ],
+      "id": "4bc96c84-bd42-4c79-9957-6d891f925b55",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawText = $json.candidates?.[0]?.content?.parts?.[0]?.text;\n\nif (!rawText) {\n  throw new Error('No se recibió respuesta de Gemini');\n}\n\nlet dataObject;\ntry {\n  dataObject = JSON.parse(rawText);\n} catch (error) {\n  const cleanText = rawText.replace(/```json|```/g, '').trim();\n  try {\n    dataObject = JSON.parse(cleanText);\n  } catch (e) {\n    throw new Error('La respuesta de Gemini no es un JSON válido: ' + e.message);\n  }\n}\n\n// ---------------------------------------------------\n// 1. Detectar formatos: PDF, PPTX, XLSX\n// ---------------------------------------------------\nlet pages = dataObject.document_pages || [];\n\n// XLSX → Gemini suele devolver \"sheets\"\nif (pages.length === 0 && Array.isArray(dataObject.sheets)) {\n  pages = dataObject.sheets.map((sheet, index) => ({\n    page: index + 1,\n    section: sheet.name || \"Hoja de cálculo\",\n    description: sheet.description || \"\",\n    text: sheet.text || \"\",\n    tables: sheet.tables || [],\n    images_desc: sheet.images_desc || [],\n    fileName: sheet.fileName || \"desconocido\",\n    url: sheet.url || \"\"\n  }));\n}\n\n// PPTX → Gemini ya devuelve document_pages, pero si no, buscar slides\nif (pages.length === 0 && Array.isArray(dataObject.slides)) {\n  pages = dataObject.slides.map((slide, index) => ({\n    page: index + 1,\n    section: slide.title || \"Diapositiva\",\n    description: slide.description || \"\",\n    text: slide.text || \"\",\n    tables: slide.tables || [],\n    images_desc: slide.images_desc || [],\n    fileName: slide.fileName || \"desconocido\",\n    url: slide.url || \"\"\n  }));\n}\n\n// ---------------------------------------------------\n// 2. Fallback seguro para documentos sin páginas\n// ---------------------------------------------------\nif (pages.length === 0) {\n  pages = [{\n    page: 1,\n    section: \"General\",\n    description: \"Contenido sin estructura de páginas u hojas detectada\",\n    text: rawText,\n    tables: [],\n    images_desc: [],\n    fileName: $input.first().json.fileName || \"desconocido\",\n    url: \"\"\n  }];\n}\n\n// ---------------------------------------------------\n// 3. Procesar metadata útil\n// ---------------------------------------------------\nconst inputData = $input.first().json;\nconst fileId = inputData.fileId;\n\n// ---------------------------------------------------\n// 4. Retorno estándar para el pipeline completo\n// ---------------------------------------------------\nreturn pages.map((pageItem) => ({\n  json: {\n    page: pageItem.page,\n    section: pageItem.section || 'General',\n    description: pageItem.description || '',\n    text: pageItem.text || '',\n    tables: pageItem.tables || [],\n    images_desc: pageItem.images_desc || [],\n    fileName: pageItem.fileName || 'desconocido',\n    fileId: fileId,\n    url: pageItem.url || ''\n  }\n}));\n"
+      },
+      "id": "31fa57be-cc9f-4809-8300-36d214db8fb3",
+      "name": "Split by Page",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        160
+      ],
+      "//note": "Extrae el contenido dividido por páginas reales para cumplir el PRD ISO27001"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCGFxTcJBUCcA3_3NSALZBrw4mRUwovt8s",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Eres un experto analista de documentos.\\n\\nNOMBRE DEL ARCHIVO A PROCESAR: {{ $json.fileName }}\\n\\nREGLA DE IDIOMA (OBLIGATORIA): \\nTodo el contenido generado (descripciones, análisis, títulos de secciones, descripciones de imágenes) DEBE estar escrito en ESPAÑOL. No uses inglés para describir el contenido.\\n\\nINSTRUCCIONES CRÍTICAS PARA TABLAS:\\n1. Busca visualmente CUALQUIER estructura de filas y columnas (como el análisis PESTEL).\\n2. Extrae toda la información de las tablas en el campo 'tables'. NO las ignores.\\n3. En 'content_json', usa un formato JSON stringificado o Markdown para representar fielmente los datos de la tabla.\\n\\nTU OBJETIVO: Procesa el archivo adjunto página por página. En cada objeto de 'document_pages', el campo 'fileName' DEBE ser '{{ $json.fileName }}' y devuelve la estructura JSON requerida en 'generationConfig'.\"\n        },\n        {\n          \"inlineData\": {\n            \"mimeType\": \"{{$json.fileType}}\",\n            \"data\": \"{{$json.base64Data}}\"\n          }\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"application/json\",\n    \"responseSchema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"document_pages\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"fileName\": { \"type\": \"string\" },\n              \"url\": { \"type\": \"string\" },\n              \"page\": { \"type\": \"integer\" },\n              \"section\": { \"type\": \"string\", \"description\": \"Nombre de la sección en ESPAÑOL\" },\n              \"description\": { \"type\": \"string\", \"description\": \"Breve descripción del contenido de la página en ESPAÑOL\" },\n              \"text\": { \"type\": \"string\" },\n              \"tables\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"table_title\": { \"type\": \"string\", \"description\": \"Título de la tabla en ESPAÑOL\" },\n                    \"content_json\": { \"type\": \"string\" }\n                  }\n                }\n              },\n              \"images_desc\": {\n                \"type\": \"array\",\n                \"items\": { \"type\": \"string\", \"description\": \"Descripción detallada de la imagen en ESPAÑOL\" }\n              }\n            }\n          }\n        }\n      },\n      \"required\": [\"document_pages\"]\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        160
+      ],
+      "id": "f3f2dd53-117e-4e41-8f5e-e27c38e81b30",
+      "name": "Extract Gemini 2.5 flash"
+    },
+    {
+      "parameters": {
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "document",
+                "value": "={{ $json.metadata.document }}"
+              },
+              {
+                "name": "page",
+                "value": "={{ $json.metadata.page }}"
+              },
+              {
+                "name": "section",
+                "value": "={{ $json.metadata.section }}"
+              },
+              {
+                "name": "description",
+                "value": "={{ $json.metadata.description }}"
+              },
+              {
+                "name": "textLenght",
+                "value": "={{ $json.metadata.textLength }}"
+              },
+              {
+                "name": "hasTable",
+                "value": "={{ $json.metadata.hasTable }}"
+              },
+              {
+                "name": "tableCount",
+                "value": "={{ $json.metadata.tableCount }}"
+              },
+              {
+                "name": "hasImages",
+                "value": "={{ $json.metadata.hasImages }}"
+              },
+              {
+                "name": "imageCount",
+                "value": "={{ $json.metadata.imageCount }}"
+              },
+              {
+                "name": "source_url",
+                "value": "={{ $json.metadata.source_url }}"
+              },
+              {
+                "name": "compliance",
+                "value": "={{ $json.metadata.compliance }}"
+              },
+              {
+                "name": "processedAt",
+                "value": "={{ $json.metadata.processedAt }}"
+              },
+              {
+                "name": "bitrixId",
+                "value": "={{ $json.metadata.bitrixId }}"
+              },
+              {
+                "name": "ubicacion",
+                "value": "={{ $json.metadata.ubicacion }}"
+              },
+              {
+                "name": "bitrixDetailUrl",
+                "value": "={{ $json.metadata.bitrixDetailUrl }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        2112,
+        352
+      ],
+      "id": "05c7ce41-7aa7-4900-b197-0d3517102b88",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 200,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2112,
+        528
+      ],
+      "id": "bdaa5c04-f6ec-4d89-b9fd-c86090d63945",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input: fileName desde Google Drive\n// Input: lista de archivos Bitrix desde el HTTP Request\n// Este code encuentra el archivo correspondiente, arma la URL y el campo \"Ubicacion\"\n\nconst googleFile = $json.originalFilename || $('texto normalizado').first().json.fileName;\nif (!googleFile) {\n  throw new Error(\"No se encontró el nombre del archivo para hacer el match.\");\n}\n\nconst bitrixList = $('Britrix File').first().json.result;\nif (!bitrixList || !Array.isArray(bitrixList)) {\n  throw new Error(\"No llegó la lista de archivos Bitrix.\");\n}\n\n// 1. Buscar el archivo en Bitrix que coincide EXACTO con el nombre\nconst match = bitrixList.find(f => f.NAME.trim() === googleFile.trim());\n\nif (!match) {\n  return [{\n    json: {\n      error: \"No se encontró match en Bitrix\",\n      googleFile\n    }\n  }];\n}\n\n// 2. Construir la URL de visualización\nconst objectId = match.ID;\nconst visualUrl = `https://mobilvendor.bitrix24.es/bitrix/tools/disk/focus.php?objectId=${objectId}&cmd=show&action=showObjectInGrid&ncc=1`;\n\n// 3. Obtener la Ubicacion desde el DETAIL_URL\n//    Ejemplo DETAIL_URL:\n//    https://mobilvendor.bitrix24.es/docs/file/ISO27001_2022/Seguridad de la Información/Requisitos/4 Contexto de la Organización.pdf\n\nconst detail = match.DETAIL_URL || \"\";\nlet ubicacion = \"\";\n\nif (detail.includes(\"ISO27001_2022/\")) {\n  const part = detail.split(\"ISO27001_2022/\")[1];\n  \n  // quitar el nombre del archivo al final\n  ubicacion = part.replace(googleFile, \"\").replace(/\\/$/, \"\");\n}\n\n// Devolver merge para que lo uses en Pinecone\nreturn [{\n  json: {\n    bitrixId: match.ID,\n    bitrixFileName: match.NAME,\n    bitrixDetail: match.DETAIL_URL,\n    bitrixViewUrl: visualUrl,\n    ubicacion\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1296,
+        160
+      ],
+      "id": "ad41504c-1a72-40df-8f78-0d9ea541b301",
+      "name": "Match Bitrix File + Build Metadata"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mobilvendor.bitrix24.es/rest/1/ghq4a7p2r32rd5u9/disk.folder.getchildren.json",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"id\": \"20143\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1104,
+        160
+      ],
+      "id": "49e6b1b8-ccad-4fff-ac03-4099d6721b07",
+      "name": "Britrix File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const pages = $('Split by Page').all().map(i => i.json);\nconst bitrix = $('Match Bitrix File + Build Metadata').first().json || {};\n\nconst items = [];\n\nfor (const pageData of pages) {\n\n  let fullPageContent = '';\n\n  // 🔹 Texto\n  if (pageData.text) {\n    fullPageContent += pageData.text + '\\n\\n';\n  }\n\n  // 🔹 Tablas\n  if (pageData.tables && pageData.tables.length > 0) {\n    fullPageContent += '=== TABLAS ===\\n';\n    pageData.tables.forEach((table, idx) => {\n      fullPageContent += `\\n--- Tabla ${idx + 1}: ${table.table_title || 'Sin título'} ---\\n`;\n      fullPageContent += table.content_json + '\\n';\n    });\n    fullPageContent += '\\n';\n  }\n\n  // 🔹 Imágenes\n  if (pageData.images_desc && pageData.images_desc.length > 0) {\n    fullPageContent += '=== IMÁGENES ===\\n';\n    pageData.images_desc.forEach((imgDesc, idx) => {\n      fullPageContent += `Imagen ${idx + 1}: ${imgDesc}\\n`;\n    });\n  }\n\n  // 🔥 ARMAR EL JSON FINAL QUE VA A PINECONE\n  items.push({\n    json: {\n      pageContent: fullPageContent.trim(),\n      metadata: {\n        // 🔥 Metadata real del documento\n        document: pageData.fileName,\n        fileId: pageData.fileId,\n        source_url: bitrix.bitrixViewUrl || pageData.url,\n\n        // 🔥 Metadata de Bitrix\n        bitrixId: bitrix.bitrixId || '',\n        ubicacion: bitrix.ubicacion || '',\n        bitrixDetailUrl: bitrix.bitrixDetail || '',\n\n        // 🔥 Metadata por página\n        page: pageData.page,\n        section: pageData.section,\n        description: pageData.description,\n        textLength: fullPageContent.length,\n        hasTable: (pageData.tables?.length || 0) > 0,\n        tableCount: pageData.tables?.length || 0,\n        hasImages: (pageData.images_desc?.length || 0) > 0,\n        imageCount: pageData.images_desc?.length || 0,\n\n        // 🔥 ISO\n        compliance: 'ISO27001:2022',\n        processedAt: new Date().toISOString()\n      }\n    }\n  });\n}\n\nreturn items;\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        160
+      ],
+      "id": "b8daa137-5c74-42ff-8e0d-63a8a95dd6e1",
+      "name": "Prepare Documents for Pinecone"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/upload/v1beta/files",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "AIzaSyBQESuPQRTQaBbgDqQLBVM9PZrLzB5DalE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        736,
+        1216
+      ],
+      "id": "ad18ffd4-e50c-4b73-bedf-8983afc3ff4e",
+      "name": "Subir Archivo"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/fileSearchStores/iso27001-vdr0cz01ulju:importFile",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "AIzaSyBQESuPQRTQaBbgDqQLBVM9PZrLzB5DalE"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fileName\": \"{{ $json.file.name }}\",\n  \"customMetadata\": [\n    {\n      \"key\": \"fecha\",\n      \"stringValue\": \"{{ $now.format('yyyy-MM-dd') }}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        944,
+        1216
+      ],
+      "id": "f9376bdd-edde-403b-a334-4c99fb5693a0",
+      "name": "Indexar DB"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Iteramos sobre todos los ítems (necesario cuando se usa \"Run Once for All Items\")\nreturn items.map(item => {\n  \n  const json = item.json;\n  const binary = item.binary || {};\n  const binaryKey = 'data'; // Suponemos que la clave binaria es 'data' (como en tu captura)\n  const binaryData = {};\n  \n  // 1. Lógica para encontrar y clonar el binario (como se ve en la primera imagen)\n  let binaryFileName = null;\n  let binaryMimeType = null;\n  let binarySize = null;\n\n  if (binary && binary[binaryKey]) {\n    // Clonamos la referencia binaria\n    binaryData[binaryKey] = { ...binary[binaryKey] };\n\n    // Extraemos los metadatos del binario (Usando 'fileName' en camelCase de n8n)\n    binaryFileName = binary[binaryKey].fileName;\n    binaryMimeType = binary[binaryKey].mimeType;\n    binarySize = binary[binaryKey].fileSize;\n  }\n  \n  // 2. Estructura de retorno (JSON + Binary)\n  return {\n    json: {\n      // Priorizamos los metadatos del binario (fileName, mimeType, fileSize) \n      // y usamos el JSON original como fallback.\n      filename: binaryFileName || json.filename || json?.['Upload File']?.filename,\n      mimetype: binaryMimeType || json.mimetype || json?.['Upload File']?.mimetype,\n      size: binarySize || json.size || json?.['Upload File']?.size,\n      \n      submittedAt: json.submittedAt,\n      formMode: json.formMode,\n      \n      metadataString: JSON.stringify({\n        file: {\n          // Usamos el nombre de archivo resuelto\n          display_name: binaryFileName || json.filename\n        }\n      }),\n    },\n    // 3. Devolvemos el binario solo si existe (tal como se ve en la imagen)\n    binary: Object.keys(binaryData).length ? binaryData : undefined\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        1216
+      ],
+      "id": "01fbef10-5f3a-4f5d-8ce6-a62a2386ca48",
+      "name": "Transformar a Binario"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/fileSearchStores",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "AIzaSyBQESuPQRTQaBbgDqQLBVM9PZrLzB5DalE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "display_name",
+              "value": "iso27001"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        736,
+        1024
+      ],
+      "id": "af25a4fd-0b66-42b3-878d-4139d9426315",
+      "name": "Crear DB"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        1840,
+        1136
+      ],
+      "id": "cfa77fd4-bcdc-4d83-ae0d-d67f2b0d6beb",
+      "name": "When chat message received",
+      "webhookId": "7304fb39-f2d3-4287-b425-17d77184b42e"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres un agente especializado en usar la herramienta \"DB tool\", la cual permite realizar consultas utilizando fileSearch.\n\nIDIOMA:\n- Tu comportamiento debe ser SIEMPRE en español.\n- Toda la información que presentes al usuario debe estar en español.\n- Si la herramienta DB tool devuelve texto en otro idioma, debes traducirlo al español sin alterar su significado.\n- Cualquier fragmento, evidencia, texto recuperado, resumen o explicación SIEMPRE debe entregarse en español.\n\nREGLAS DE USO DE TOOL:\n- Cada vez que el usuario haga una pregunta, SIEMPRE debes llamar a la herramienta DB tool.\n- Debes colocar la pregunta del usuario dentro del campo: contents[0].parts[0].text\n- NUNCA respondas directamente sin usar la tool.\n- La tool ya está configurada con fileSearch y el store \"iso27001-vdr0cz01ulju\".\n- La respuesta final al usuario SIEMPRE debe ser la respuesta procesada y explicada a partir de la tool.\n- Si la tool devuelve error, debes explicarlo al usuario en español.\n\nPOST-PROCESAMIENTO:\n- Puedes organizar o resumir la información resultante de la tool, pero NO puedes inventar nada.\n- No debes agregar información adicional que no venga explícitamente en los documentos.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        1136
+      ],
+      "id": "ee9007c2-0c25-44d0-a046-78f334beb401",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2032,
+        1344
+      ],
+      "id": "9693956e-904b-4cbf-a717-a6be4b3f670e",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2176,
+        1344
+      ],
+      "id": "afe4fbbc-a9f2-4130-b9c4-292e52be5a15",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "toolDescription": "UTILIZA ESTA HERRAMIENTA CUANDO EL USUAIOR HAGA PREGUNTAS  SOBRE INFORMACION DE MATRICES ",
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "AIzaSyBQESuPQRTQaBbgDqQLBVM9PZrLzB5DalE"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"\"\n        }\n      ]\n    }\n  ],\n  \"tools\": [\n    {\n      \"fileSearch\": {\n        \"fileSearchStoreNames\": [\n          \"fileSearchStores/iso27001-vdr0cz01ulju\"\n        ]\n      }\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        2320,
+        1344
+      ],
+      "id": "642c291a-aaf0-4ba9-91e3-de2b4c97e76b",
+      "name": "DB tool"
+    },
+    {
+      "parameters": {
+        "content": "## FILES SEARCH GEMINI\n",
+        "height": 800,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        672,
+        960
+      ],
+      "typeVersion": 1,
+      "id": "daf7fb4e-704d-4c1c-874b-48a2250b76d3",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## AGENTE FILESEARCH\n",
+        "height": 608,
+        "width": 944,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1712,
+        1008
+      ],
+      "typeVersion": 1,
+      "id": "33b35ff4-4a41-47a5-b6e9-35d9982d914a",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const mimeType = $json.mimeType || '';\nconst fileName = $json.originalFilename || $json.name || '';\n\n// Detecta Excel por MIME o por extensión\nconst isExcel =\n\tmimeType.includes('spreadsheet') ||\n\tmimeType.includes('excel') ||\n\tmimeType.includes('ms-excel') ||\n\tfileName.toLowerCase().match(/\\.(xlsx|xls)$/);\n\n// Retorna el JSON original + fileType\nreturn [\n  {\n    json: {\n      ...$input.first().json,\n      fileType: isExcel ? 'excel' : 'pdf'\n    }\n  }\n];\n"
+      },
+      "id": "97b8cada-3f5c-433e-8681-767c9797abb9",
+      "name": "Detect File Type",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -48,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.fileType }}",
+              "operation": "notEqual",
+              "value2": "excel"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        176,
+        176
+      ],
+      "id": "a8c99e90-f416-48db-ab28-6e5497fcdb08",
+      "name": "Is Excel?"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        432,
+        160
+      ],
+      "id": "a38ea57e-67d0-4863-8fda-0d402efd8fd4",
+      "name": "Download PDF",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const binary = $input.first().binary;\nif (binary && binary.data) {\n  const file = binary.data;\n  return [{ json: { fileName: file.fileName, fileType: file.mimeType, base64Data: file.data } }];\n}\nthrow new Error('No binary data found');"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        592,
+        160
+      ],
+      "id": "c1b0101d-1c67-46b0-ae0e-8c7dc92035c1",
+      "name": "Prepare PDF Binary"
+    },
+    {
+      "parameters": {
+        "jsCode": "const currentSheet = $json.sheets[0];\nif (!currentSheet || !currentSheet.rows || currentSheet.rows.length === 0) return [{ json: { error: 'Empty sheet' } }];\nconst sheetName = currentSheet.sheetName;\nconst rows = currentSheet.rows;\nconst headers = rows[0] || [];\nconst dataRows = rows.slice(1);\nconst processedRows = [];\nfor (let i = 0; i < dataRows.length; i++) {\n  const row = dataRows[i];\n  let concatenated = '';\n  for (let j = 0; j < headers.length; j++) {\n    const header = headers[j] || ('Column_' + j);\n    const value = row[j] || '';\n    if (value && value.toString().trim()) concatenated += header + ': ' + value + ' | ';\n  }\n  if (concatenated) processedRows.push({ rowIndex: i + 1, content: concatenated.slice(0, -3) });\n}\nreturn [{ json: { fileName: $json.fileName, fileId: $json.fileId, sheetName: sheetName, data: processedRows, headers: headers } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        432
+      ],
+      "id": "d84725ba-f1f7-4efc-8f85-6bebe8f475f0",
+      "name": "Process Sheet"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = [];\nif (!$json.data || $json.data.length === 0) return items;\n$json.data.forEach((row) => {\n  items.push({\n    json: {\n      pageContent: row.content,\n      metadata: { document: $json.fileName, fileId: $json.fileId, sourceType: 'excel', sheetName: $json.sheetName, rowIndex: row.rowIndex, section: 'Row Data', compliance: 'ISO27001:2022' }\n    }\n  });\n});\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        432
+      ],
+      "id": "286cf101-519c-4a01-9453-3eb54efedc61",
+      "name": "Prepare Excel Docs"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1696,
+        352
+      ],
+      "id": "beba0dcf-ccf5-4131-b333-fcefb4f48fd3",
+      "name": "Merge PDF & Excel"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1Lix3SSQR-jZBR-A5PkmG6KbAozKhAGKm",
+          "mode": "list",
+          "cachedResultName": "ISO27001_mobilvendor_KB_gemini",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1Lix3SSQR-jZBR-A5PkmG6KbAozKhAGKm"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        176
+      ],
+      "id": "170b3022-8036-422e-8165-8c6fe4f1a8aa",
+      "name": "Google Drive Trigger1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        432,
+        432
+      ],
+      "id": "443a0e90-fb36-4d3c-ae58-463952160db2",
+      "name": "Download xlsx",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {
+          "sheetName": "Sheet"
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1056,
+        768
+      ],
+      "id": "c35ba602-4f5e-4900-b21c-d597b1421bb5",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all().map(i => i.json);\n\n// -----------------------------------------------------\n// 1. Encontrar fila con FECHA (Punto de referencia)\n// -----------------------------------------------------\nlet fechaIndex = rows.findIndex(r => {\n  const vals = Object.values(r).map(v => String(v || '').toLowerCase());\n  return vals.some(v =>\n    v.includes(\"fecha\") ||\n    v.includes(\"actualiz\") ||\n    /^\\d{5}$/.test(v) ||                  // fecha Excel num\n    /\\d{1,2}[-/]\\d{1,2}[-/]\\d{2,4}/.test(v) // fecha formato texto\n  );\n});\n\nif (fechaIndex === -1) throw new Error(\"No encontré la fila con fecha.\");\n\n// -----------------------------------------------------\n// 2. Mapear las COLUMNAS usando la fila de encabezados\n// -----------------------------------------------------\n// Tomamos la fila siguiente a la fecha como encabezado\nconst headerRow = rows[fechaIndex + 1];\n\n// Creamos un mapa que relacione: Clave_Original (\"__EMPTY\") -> Nombre_Limpio (\"departamento\")\nconst columnMap = Object.keys(headerRow).map(rawKey => {\n  const rawValue = headerRow[rawKey];\n  \n  // Normalizar el nombre de la columna\n  const cleanName = String(rawValue)\n    .normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\") // Quitar tildes\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, \"_\") // Solo alfanuméricos y guiones bajos\n    .replace(/^_+|_+$/g, \"\") || rawKey; // Si queda vacío, usar la key original\n\n  return {\n    rawKey: rawKey,      // Ej: \"__EMPTY\"\n    fieldName: cleanName // Ej: \"id\" o \"departamento\"\n  };\n});\n\n// -----------------------------------------------------\n// 3. Procesar datos aplicando HERENCIA (Fill Down)\n// -----------------------------------------------------\nconst dataRows = rows.slice(fechaIndex + 2);\n\nlet lastKnownValues = {}; // Almacena los valores del grupo actual (ID, Dept, etc.)\nlet output = [];\n\nfor (let r of dataRows) {\n  // Ignorar filas que estén totalmente vacías\n  if (Object.values(r).length === 0) continue;\n\n  let rowObj = {};\n  let hasContent = false;\n\n  // Iteramos sobre el MAPA de columnas, no sobre los valores de la fila\n  columnMap.forEach(col => {\n    const rawVal = r[col.rawKey]; // Buscamos por la clave específica (ej: __EMPTY_1)\n    \n    // Lógica del Patrón de Fusión:\n    if (rawVal !== undefined && rawVal !== null && String(rawVal).trim() !== \"\") {\n      // CASO A: Hay dato nuevo -> Es un nuevo grupo o dato único\n      // Actualizamos la memoria \"lastKnownValues\" para esta columna\n      lastKnownValues[col.fieldName] = rawVal;\n      rowObj[col.fieldName] = rawVal;\n      hasContent = true;\n    } else {\n      // CASO B: Está vacío -> Heredamos del padre (Merge vertical)\n      // Usamos el valor guardado en memoria\n      rowObj[col.fieldName] = lastKnownValues[col.fieldName] || \"\";\n    }\n  });\n\n  // Solo agregamos la fila si tiene algún contenido relevante o heredado\n  // (A veces conviene filtrar si la columna \"activo\" o principal está vacía, depende de tu lógica)\n  if (hasContent || Object.keys(lastKnownValues).length > 0) {\n    \n    // Crear texto semántico para IA/Pinecone (Opcional)\n    let text = Object.entries(rowObj)\n      .map(([k, v]) => `${k}: ${v}`)\n      .join(\"\\n\");\n\n    output.push({ json: { data: rowObj, text } });\n  }\n}\n\nreturn output;\n\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        768
+      ],
+      "id": "56f4f4e4-120b-4024-97b7-0b7691e5461f",
+      "name": "texto normalizado"
+    },
+    {
+      "parameters": {
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/{{ $('Google Drive Trigger1').item.json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        768
+      ],
+      "id": "266e45aa-cbdb-4e88-a729-eec5a1e497e2",
+      "name": "HTTP Request",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        400,
+        768
+      ],
+      "id": "b82ade58-cd5e-4a81-8f5a-1b37f0bf9d07",
+      "name": "Download file1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nlet sheetNames = [];\n\n// Iteramos sobre todos los ítems de entrada (asumimos que solo hay 1 item principal de metadatos)\nfor (const item of items) {\n    // La respuesta de la API de metadatos tiene la lista de hojas en item.json.sheets\n    const sheetsArray = item.json.sheets;\n\n    if (sheetsArray && Array.isArray(sheetsArray)) {\n        // Recorremos el array de hojas y extraemos el título\n        sheetsArray.forEach(sheet => {\n            // El nombre de la hoja se encuentra en la propiedad 'properties.title'\n            const name = sheet.properties && sheet.properties.title;\n            \n            if (name) {\n                // Agregamos un nuevo ítem por cada nombre de hoja encontrado\n                sheetNames.push({\n                    json: {\n                        sheetName: name,\n                        sheetId: sheet.properties.sheetId // También útil para futuras operaciones\n                    }\n                });\n            }\n        });\n    }\n}\n\nreturn sheetNames;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        816,
+        768
+      ],
+      "id": "3df6763d-383c-459b-9fc2-d36b1a34e2e4",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-17T17:02:27.246Z",
+      "updatedAt": "2025-11-17T17:02:27.246Z",
+      "role": "workflow:owner",
+      "workflowId": "hw4H1or6ubs1Itx1",
+      "projectId": "IcIKCrtLDXlTBTP5"
+    }
+  ],
+  "staticData": {
+    "node:Google Drive Trigger": {
+      "lastTimeChecked": "2025-11-24T18:12:31Z"
+    },
+    "node:Google Drive Trigger1": {
+      "lastTimeChecked": "2026-01-11T21:43:54Z"
+    }
+  },
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-11-25T13:17:35.000Z",
+  "versionId": "86e5f8e9-066f-4073-81b1-032025ecf333"
+}
