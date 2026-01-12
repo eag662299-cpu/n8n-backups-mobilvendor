@@ -1,0 +1,907 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Message Types1": {
+      "main": [
+        [
+          {
+            "node": "Lookup MQL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reply To User3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Sales Agent1": {
+      "main": [
+        [
+          {
+            "node": "Reply To User2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Extract Chat Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Handle Message Types1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup MQL1": {
+      "main": [
+        [
+          {
+            "node": "Decide Mode & Build Prompt1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decide Mode & Build Prompt1": {
+      "main": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Chat Data1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-08T13:51:45.695Z",
+  "id": "Iao0KAjcDxq4VZ3l",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 9",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "### 3a. Manejar Tipos de Mensajes No Compatibles\nPara los mensajes que no son de texto, simplemente responderemos con un mensaje sencillo para informar al remitente.",
+        "height": 151,
+        "width": 338,
+        "color": 7
+      },
+      "id": "d520c193-2053-4ee4-97bf-5c64ba748efa",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1024,
+        832
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "2. El agente de IA de ventas responde a los clientes\n\n\nLos agentes de IA de n8n son nodos potentes que facilitan increíblemente el uso de la IA de última generación en sus flujos de trabajo. No solo tienen la capacidad de recordar conversaciones por cliente individual, sino que también aprovechan recursos como nuestro almacén de vectores del catálogo de productos para extraer información objetiva y datos para cada pregunta.\n\nUtilizamos un agente de IA que está dirigido a ayudar al usuario a navegar por el folleto del producto. Se adjunta un subnodo de memoria de chat para identificar y realizar un seguimiento de la sesión del cliente. Se agrega una herramienta de almacén de vectores para permitir que el agente acceda a la base de conocimientos del catálogo de productos que creamos anteriormente.",
+        "height": 1185,
+        "width": 891,
+        "color": 6
+      },
+      "id": "5c64b3af-eb4f-41e8-b9b8-5cac64bc69fb",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -656,
+        -208
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "2. Responder al usuario de WhatsApp\n\nEl nodo de WhatsApp es la opción ideal si quieres interactuar con usuarios de WhatsApp. Con este nodo, puedes enviar mensajes de texto, imágenes, audio y vídeo, así como utilizar tus plantillas de mensajes de WhatsApp.\n\nAquí, lo mantendremos sencillo respondiendo con un mensaje de texto que es la salida del agente de IA.",
+        "height": 484.1875,
+        "width": 495.4375
+      },
+      "id": "2468ce43-7830-4069-a044-ebd44a35dcf6",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        288,
+        64
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Activa tu flujo de trabajo para usarlo!\nPara comenzar a usar el chatbot de WhatsApp, deberás activar el flujo de trabajo. Si te auto-hospedas, asegúrate de que WhatsApp pueda conectarse a tu servidor.\n",
+        "height": 107.02804651162779,
+        "width": 364.6293255813954,
+        "color": 5
+      },
+      "id": "4c4bf6c3-e181-4e7a-94f4-1667ff8214cd",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1232,
+        688
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "3. Usa el disparador de WhatsApp\n\n\nEl disparador de WhatsApp te permite recibir mensajes entrantes de WhatsApp de tus clientes. Requiere un poco de configuración, ¡así que recuerda seguir la documentación cuidadosamente! Sin embargo, una vez listo, es bastante fácil construir flujos de trabajo potentes que sean fácilmente accesibles para los usuarios.\n\nTen en cuenta que WhatsApp puede enviar muchos tipos de mensajes, como audio y vídeo, por lo que en esta demostración, los filtraremos y solo aceptaremos los mensajes de texto.",
+        "height": 484.1875,
+        "width": 546.6875,
+        "color": 4
+      },
+      "id": "072dde81-26b3-4374-af48-6af4b5e203ca",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1248,
+        160
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-2024-08-06",
+        "options": {}
+      },
+      "id": "b4070ba2-d04f-40e5-b690-4a852ad7d4e0",
+      "name": "OpenAI Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        -224,
+        544
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=whatsapp-75-{{ $json.messages[0].from }}"
+      },
+      "id": "a593be0c-e7d2-4262-ab3f-b2a4892418ff",
+      "name": "Window Buffer Memory1",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        -128,
+        544
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "name": "query_product_brochure",
+        "description": "Llama a esta herramienta para consultar el folleto del producto."
+      },
+      "id": "a912b036-1690-4d79-9b92-93a8548f4acc",
+      "name": "Vector Store Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "position": [
+        -16,
+        544
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "81894585-2560-468b-8dec-c412323795c8",
+      "name": "Embeddings OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        -160,
+        864
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-2024-08-06",
+        "options": {}
+      },
+      "id": "f08896df-b109-4dd8-b22f-44015ed41b18",
+      "name": "OpenAI Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        160,
+        704
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "102646042734013",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').item.json.messages[0].from }}",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {
+          "previewUrl": false
+        }
+      },
+      "id": "67a8d080-5016-4762-aba3-2541f29fe7be",
+      "name": "Reply To User2",
+      "type": "n8n-nodes-base.whatsApp",
+      "position": [
+        480,
+        336
+      ],
+      "typeVersion": 1,
+      "webhookId": "6e14d66d-402a-4902-b5d8-0a2bb5093a04",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "tk6zrwxJLxGE2YuG",
+          "name": "WhatsApp account_TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "102646042734013",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').item.json.messages[0].from }}",
+        "textBody": "=I'm unable to process non-text messages. Please send only text messages. Thanks!",
+        "additionalFields": {
+          "previewUrl": false
+        }
+      },
+      "id": "01b798c4-75b8-4c95-9ab4-9d26a5e58c71",
+      "name": "Reply To User3",
+      "type": "n8n-nodes-base.whatsApp",
+      "position": [
+        -544,
+        704
+      ],
+      "typeVersion": 1,
+      "webhookId": "8c255a5e-2062-48b2-bf98-abb7018cf9c0",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "tk6zrwxJLxGE2YuG",
+          "name": "WhatsApp account_TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "text",
+                    "id": "85c7c02c-63f4-4313-96c9-98b063c88444"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Supported"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "89971d8c-a386-4e77-8f6c-f491a8e84cb6",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEquals"
+                    },
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "text"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Not Supported"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f960113d-a12e-4e4a-8a21-d1f7d606e30b",
+      "name": "Handle Message Types1",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        -928,
+        448
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Decide Mode & Build Prompt1').item.json.systemMessage }}",
+        "options": {
+          "systemMessage": "={{ $('Decide Mode & Build Prompt1').item.json.systemMessage }}"
+        }
+      },
+      "id": "8a7476cd-042f-4d2a-a775-30ca2883fa8e",
+      "name": "AI Sales Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        -80,
+        336
+      ],
+      "typeVersion": 1.6
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {
+          "messageStatusUpdates": [
+            "all",
+            "read"
+          ]
+        }
+      },
+      "id": "ee44f2a6-b0cd-4f21-b856-c5aad79b37bc",
+      "name": "WhatsApp Trigger1",
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "position": [
+        -1136,
+        448
+      ],
+      "webhookId": "aaa71f03-f7af-4d18-8d9a-0afb86f1b554",
+      "typeVersion": 1,
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "kTsS3qhdfuvH39pc",
+          "name": "WhatsApp OAuth_MKT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "brochure-index-llama",
+          "mode": "list",
+          "cachedResultName": "brochure-index-llama"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        -160,
+        704
+      ],
+      "id": "b67179a6-2544-4ab9-b672-fd197c224f17",
+      "name": "Pinecone Vector Store1",
+      "credentials": {
+        "pineconeApi": {
+          "id": "bqNx5oAwXmTYQGz2",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "lookup",
+        "sheetId": "1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg",
+        "range": "Hoja 1",
+        "lookupColumn": "phone",
+        "lookupValue": "={{ $json.messages[0].from }}",
+        "options": {}
+      },
+      "id": "ad73daa5-4b38-4a62-adae-62d03a4ba6b6",
+      "name": "Lookup MQL1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        -608,
+        336
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lee fila del Sheet (si existe) y decide el modo con análisis de conversación\nlet row = {};\nlet isNewContact = false;\n\ntry {\n  const lookupResult = $input.first();\n  if (lookupResult?.json && Object.keys(lookupResult.json).length > 1) {\n    // Hay datos en el spreadsheet\n    row = lookupResult.json;\n    isNewContact = false;\n  } else {\n    // No hay datos o fila vacía - contacto nuevo\n    isNewContact = true;\n    row = {};\n  }\n} catch (error) {\n  console.log('No se encontró registro para este teléfono - contacto nuevo');\n  isNewContact = true;\n  row = {};\n}\n\nconst toBool = v => v === true || `${v}`.trim().toLowerCase() === \"true\";\nconst rawPhone = $('WhatsApp Trigger1').item.json.messages[0].from || \"\";\nconst phone = rawPhone.startsWith('+') ? rawPhone : `+${rawPhone}`;\n\n// Estado actual - inicializar correctamente para contactos nuevos\nconst currentState = {\n  // Datos de calificación\n  MQL1: isNewContact ? false : toBool(row.MQL1),\n  MQL2: isNewContact ? false : toBool(row.MQL2),\n  OK: isNewContact ? false : toBool(row.OK),\n  \n  // Datos de la empresa - VACÍO para contactos nuevos\n  razon_social: isNewContact ? \"\" : (row.razon_social || \"\"),\n  giro_negocio: isNewContact ? \"\" : (row.giro_negocio || \"\"),\n  correo_corporativo: isNewContact ? \"\" : (row.correo_corporativo || \"\"),\n  empresa: isNewContact ? \"\" : (row.empresa || \"\"),\n  industria: isNewContact ? \"\" : (row.industria || \"\"),\n  empleados: isNewContact ? \"\" : (row.empleados || \"\"),\n  \n  // Datos de contacto\n  email: isNewContact ? \"\" : (row.email || \"\"),\n  phone: phone,\n  \n  // Estado de la conversación - REINICIAR para contactos nuevos\n  attemps: isNewContact ? 0 : (row.attemps ? parseInt(row.attemps) : 0),\n  current_step: isNewContact ? 0 : (row.current_step ? parseInt(row.current_step) : 0),\n  pending_question: isNewContact ? \"\" : (row.pending_question || \"\"),\n  \n  // Metadatos\n  id_lead: row.id_lead || \"\",\n  presencia_redes: isNewContact ? false : toBool(row.presencia_redes),\n  update_lead: row.update_lead || \"\",\n  ip: row.ip || \"\"\n};\n\nconst userMessage = $('WhatsApp Trigger1').item.json.messages[0].text.body || \"\";\n\n// Preguntas secuenciales con validaciones MEJORADAS\nconst questions = [\n  {\n    key: 'razon_social',\n    question: '¿Cuál es el nombre de tu empresa o razón social?',\n    followUp: 'Me podrías confirmar el nombre completo de tu empresa?',\n    validator: (text) => {\n      const cleanText = text.trim().toLowerCase();\n      // Rechazar saludos básicos pero aceptar nombres de empresa\n      if (cleanText.length < 2) return false;\n      if (/^(hola|hi|hello|buenos dias|buenas tardes|buenas noches)$/i.test(cleanText)) return false;\n      return true;\n    },\n    required: true,\n    saveToFields: ['razon_social', 'empresa']\n  },\n  {\n    key: 'giro_negocio',\n    question: '¿A qué se dedica tu empresa? Me gustaría conocer su giro de negocio.',\n    followUp: '¿Podrías contarme un poco más sobre la actividad principal de tu negocio?',\n    validator: (text) => {\n      const cleanText = text.trim().toLowerCase();\n      if (cleanText.length < 3) return false;\n      if (/^(hola|hi|hello|buenos dias|buenas tardes|no se|ns|nada)$/i.test(cleanText)) return false;\n      return true;\n    },\n    required: true,\n    saveToFields: ['giro_negocio', 'industria']\n  },\n  {\n    key: 'correo_corporativo',\n    question: '¿Tienes un correo corporativo donde te pueda contactar?',\n    followUp: '¿Me podrías proporcionar tu correo corporativo para enviarte información?',\n    validator: (text) => {\n      // Validación mejorada para emails\n      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;\n      return emailRegex.test(text.trim());\n    },\n    required: true,\n    saveToFields: ['correo_corporativo', 'email']\n  }\n];\n\n// LÓGICA CORREGIDA: Determinar si necesita hacer preguntas\nlet needsToAskQuestion = false;\nlet nextQuestion = null;\n\n// Si es primer mensaje y es un saludo, iniciar proceso de calificación\nif (isNewContact && /^(hola|hi|hello|buenos dias|buenas tardes|buenas noches)$/i.test(userMessage.trim().toLowerCase())) {\n  currentState.pending_question = 'razon_social';\n  currentState.current_step = 0;\n  currentState.attemps = 0;\n  needsToAskQuestion = true;\n} \n// Si hay una pregunta pendiente y el usuario respondió algo\nelse if (currentState.pending_question && userMessage.trim().length > 0) {\n  const questionConfig = questions.find(q => q.key === currentState.pending_question);\n  \n  if (questionConfig) {\n    console.log(`Validando respuesta para ${questionConfig.key}: \"${userMessage}\"`);\n    \n    if (questionConfig.validator(userMessage)) {\n      console.log(`✅ Respuesta válida para ${questionConfig.key}`);\n      \n      // Respuesta válida - guardar y avanzar\n      const value = userMessage.trim();\n      questionConfig.saveToFields.forEach(field => {\n        currentState[field] = value;\n        console.log(`Guardando ${field}: ${value}`);\n      });\n      \n      // Limpiar estado de pregunta pendiente y avanzar\n      currentState.pending_question = \"\";\n      currentState.current_step++;\n      currentState.attemps = 0;\n      \n      console.log(`Avanzando a step: ${currentState.current_step}`);\n      \n    } else {\n      console.log(`❌ Respuesta inválida para ${questionConfig.key}`);\n      // Respuesta inválida - incrementar intentos\n      currentState.attemps++;\n      console.log(`Incrementando attemps a: ${currentState.attemps}`);\n    }\n  }\n}\n\n// Determinar si necesita hacer la siguiente pregunta\nif (currentState.attemps < 3) {\n  // Buscar la siguiente pregunta que necesita respuesta\n  const nextQuestionConfig = questions.find(q => {\n    const currentValue = currentState[q.key] || \"\";\n    const isEmpty = currentValue.length === 0;\n    console.log(`Checking ${q.key}: currentValue=\"${currentValue}\", isEmpty=${isEmpty}`);\n    return isEmpty;\n  });\n\n  if (nextQuestionConfig) {\n    console.log(`📝 Siguiente pregunta: ${nextQuestionConfig.key}`);\n    needsToAskQuestion = true;\n    \n    // Solo actualizar pending_question si no hay una ya establecida o si acabamos de completar una\n    if (!currentState.pending_question) {\n      currentState.pending_question = nextQuestionConfig.key;\n      console.log(`Estableciendo pending_question: ${nextQuestionConfig.key}`);\n    }\n    \n    nextQuestion = {\n      key: nextQuestionConfig.key,\n      text: currentState.attemps > 0 ? nextQuestionConfig.followUp : nextQuestionConfig.question\n    };\n  }\n}\n\n// Validar si tiene toda la información requerida\nconst hasMinimumInfo = Boolean(\n  currentState.razon_social && \n  currentState.razon_social.length >= 2 &&\n  currentState.giro_negocio && \n  currentState.giro_negocio.length >= 3 &&\n  currentState.correo_corporativo &&\n  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(currentState.correo_corporativo)\n);\n\nconsole.log(`Estado de información completa: ${hasMinimumInfo}`);\nconsole.log(`razon_social: \"${currentState.razon_social}\"`);\nconsole.log(`giro_negocio: \"${currentState.giro_negocio}\"`);\nconsole.log(`correo_corporativo: \"${currentState.correo_corporativo}\"`);\n\n// Actualizar MQLs basado en información completa\nif (currentState.razon_social && currentState.giro_negocio) {\n  currentState.MQL1 = true;\n  console.log(\"✅ MQL1 activado\");\n  \n  if (currentState.correo_corporativo && \n      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(currentState.correo_corporativo)) {\n    currentState.MQL2 = true;\n    console.log(\"✅ MQL2 activado\");\n  }\n}\n\n// Construir mensaje del sistema\nconst AGENDA = \"👉 Agendar reunión con Mobilvendor https://outlook.office365.com/book/Mobilvendor_Comercial@mobilvendor.com/?ismsaljsauthenabled=true\";\n\nconst base = `Eres un asistente virtual de Mobilvendor para WhatsApp.\n${!hasMinimumInfo ? 'Durante la fase de calificación, proporciona información BREVE Y GENERAL sobre beneficios de Mobilvendor, pero NO uses la base de conocimiento específica.' : 'Usa la herramienta de búsqueda del folleto (vector store) para responder consultas sobre productos y servicios.'}\nSi algo no está en la base de conocimiento, responde: \"Lo siento, no dispongo de esa información en este momento.\"\nNo inventes información.\n\nPara contacto directo o demos: ${AGENDA}\n\nEstilo: conciso, claro, cercano, apropiado para WhatsApp.`;\n\nconst qualificationInfo = `\nESTADO DE INFORMACIÓN:\n- Razón Social: ${currentState.razon_social ? '✅' : '❌'} ${currentState.razon_social || 'Pendiente'}\n- Giro Negocio: ${currentState.giro_negocio ? '✅' : '❌'} ${currentState.giro_negocio || 'Pendiente'}\n- Email Corp.: ${currentState.correo_corporativo ? '✅' : '❌'} ${currentState.correo_corporativo || 'Pendiente'}\n- Intentos: ${currentState.attemps}/3\n- Paso: ${currentState.current_step}/3\n\nINSTRUCCIONES:\n1. ${isNewContact ? 'Preséntate brevemente y ' : ''}${needsToAskQuestion ? 'proporciona información BREVE sobre beneficios generales de Mobilvendor' : 'responde usando la base de conocimiento'}\n2. DESPUÉS, ${nextQuestion ? `pregunta de forma natural: \"${nextQuestion.text}\"` : 'continúa la conversación normalmente'}\n3. MÁXIMO una pregunta por mensaje\n4. Durante la calificación, solo proporciona información general y breve\n5. Sé amable y profesional`;\n\n// Determinar modo final\nlet finalMode = 'answer';\nlet modePrefix = '🎯 MODO=';\n\nif (!hasMinimumInfo && currentState.attemps < 3) {\n  finalMode = 'qualification';\n  if (isNewContact) {\n    modePrefix += 'first_contact';\n  } else {\n    modePrefix += 'qualification';\n  }\n} else if (currentState.attemps >= 3) {\n  finalMode = 'answer';\n  modePrefix += 'answer_max_attempts';\n} else if (hasMinimumInfo) {\n  finalMode = 'answer';\n  modePrefix += 'answer_qualified';\n} else {\n  finalMode = 'answer';\n  modePrefix += 'answer_default';\n}\n\nconsole.log(`Modo final: ${finalMode}`);\nconsole.log(`Necesita preguntar: ${needsToAskQuestion}`);\nconsole.log(`Próxima pregunta: ${nextQuestion ? nextQuestion.key : 'ninguna'}`);\n\nconst systemMessage = [\n  base,\n  `\\n${modePrefix}`,\n  needsToAskQuestion ? qualificationInfo : '\\nResponde usando la base de conocimiento completa. El usuario está calificado.'\n].join('\\n');\n\nreturn {\n  json: {\n    systemMessage,\n    mode: finalMode,\n    MQL1: currentState.MQL1,\n    MQL2: currentState.MQL2,\n    currentState,\n    nextQuestion,\n    hasMinimumInfo,\n    isNewContact,\n    needsToAskQuestion,\n    isFirstInteraction: isNewContact || currentState.current_step === 0,\n    userMessage: userMessage.substring(0, 100) + (userMessage.length > 100 ? \"...\" : \"\"),\n    debug: {\n      attemps: currentState.attemps,\n      current_step: currentState.current_step,\n      pending_question: currentState.pending_question,\n      needsToAskQuestion,\n      hasMinimumInfo,\n      questions_completed: {\n        razon_social: !!currentState.razon_social,\n        giro_negocio: !!currentState.giro_negocio,\n        correo_corporativo: !!currentState.correo_corporativo\n      }\n    }\n  }\n};"
+      },
+      "id": "6c3e09a4-5d88-4e92-bc0e-26f096c811c0",
+      "name": "Decide Mode & Build Prompt1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        336
+      ],
+      "alwaysOutputData": true,
+      "properties": {
+        "mode": "runOnceForAllItems",
+        "language": "JavaScript"
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preparar datos para la actualización del spreadsheet\nconst input = $input.first().json;\nconst mode = input.mode || \"answer\";\nconst newState = input.currentState || {}; // Este es el NUEVO estado procesado\n\n// Obtener el estado ANTERIOR (de la base de datos)\nconst lookupResult = $('Lookup MQL1').first();\nconst previousState = lookupResult?.json || {};\nconst rawPhone = $('WhatsApp Trigger1').item.json.messages[0].from || \"\";\n\n// MODIFICACIÓN: Remover el signo + si existe\nconst phone = rawPhone.startsWith('+') ? rawPhone.substring(1) : rawPhone;\n\nconst toBool = v => v === true || `${v}`.trim().toLowerCase() === \"true\";\n\n// DEBUG: Verificar qué datos están llegando\nconsole.log('Mode:', mode);\nconsole.log('Previous State (from DB):', JSON.stringify(previousState));\nconsole.log('New State (processed):', JSON.stringify(newState));\nconsole.log('Phone number (raw):', rawPhone);\nconsole.log('Phone number (processed):', phone);\n\n// LÓGICA MEJORADA: Determinar si es contacto nuevo basado SOLO en si existe el teléfono\nconst isNewContact = !previousState || \n                     !previousState.phone || \n                     previousState.phone === \"\" ||\n                     Object.keys(previousState).length <= 2; // Solo tiene row_number y algún campo vacío\n\nconsole.log('Is new contact:', isNewContact);\nconsole.log('Previous phone:', previousState.phone);\nconsole.log('Previous data keys:', Object.keys(previousState));\n\n// Función para preparar datos de actualización\nfunction prepareUpdateData(isNew) {\n  // Para contactos existentes, preservar información previa y solo actualizar lo necesario\n  const baseData = isNew ? {} : previousState;\n  \n  return {\n    // Datos de calificación - preservar los existentes si ya están true\n    MQL1: toBool(newState.MQL1) || toBool(baseData.MQL1) || false,\n    MQL2: toBool(newState.MQL2) || toBool(baseData.MQL2) || false,\n    OK: toBool(newState.OK) || toBool(baseData.OK) || false,\n    \n    // Datos de la empresa - solo actualizar si hay nuevo valor válido\n    razon_social: newState.razon_social || baseData.razon_social || \"\",\n    giro_negocio: newState.giro_negocio || baseData.giro_negocio || \"\",\n    correo_corporativo: newState.correo_corporativo || baseData.correo_corporativo || \"\",\n    empresa: newState.razon_social || newState.empresa || baseData.empresa || baseData.razon_social || \"\",\n    industria: newState.giro_negocio || newState.industria || baseData.industria || baseData.giro_negocio || \"\",\n    empleados: newState.empleados || baseData.empleados || \"\",\n    \n    // Datos de contacto - MODIFICADO: phone sin +\n    email: newState.correo_corporativo || newState.email || baseData.email || baseData.correo_corporativo || \"\",\n    phone: phone, // Siempre usar el teléfono actual (sin +)\n    \n    // Estado de la conversación - siempre usar el estado nuevo (es dinámico)\n    attemps: newState.attemps || 0,\n    current_step: newState.current_step || 0,\n    pending_question: newState.pending_question || \"\",\n    \n    // Metadatos\n    id_lead: baseData.id_lead || \"\", // Preservar ID si existe\n    presencia_redes: toBool(newState.presencia_redes) || toBool(baseData.presencia_redes) || false,\n    update_lead: new Date().toISOString(), // Siempre actualizar timestamp\n    ip: newState.ip || baseData.ip || \"\",\n    mode: mode,\n    is_new_contact: isNew,\n    last_message: input.userMessage || \"\"\n  };\n}\n\n// Para contactos nuevos - crear entrada inicial\nif (isNewContact) {\n  console.log('NEW CONTACT: Creating initial entry');\n  \n  const updateData = prepareUpdateData(true);\n  \n  // Aplicar lógica de calificación MQL\n  if (updateData.razon_social && updateData.giro_negocio) {\n    updateData.MQL1 = true;\n    if (updateData.correo_corporativo && \n        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(updateData.correo_corporativo)) {\n      updateData.MQL2 = true;\n    }\n  }\n  \n  console.log('New contact data to insert:', JSON.stringify(updateData, null, 2));\n  \n  return {\n    json: {\n      ...updateData,\n      skipUpdate: false,\n      operation: \"insert\" // Indicar que es inserción\n    }\n  };\n}\n\n// Para contactos existentes - verificar si hay cambios reales\nconsole.log('EXISTING CONTACT: Checking for changes');\n\nconst updateData = prepareUpdateData(false);\n\n// Verificar cambios campo por campo - MEJORADO para detectar cambios en datos importantes\nconst changes = {\n  razon_social: (previousState.razon_social || \"\").trim() !== (updateData.razon_social || \"\").trim(),\n  giro_negocio: (previousState.giro_negocio || \"\").trim() !== (updateData.giro_negocio || \"\").trim(),\n  correo_corporativo: (previousState.correo_corporativo || \"\").trim() !== (updateData.correo_corporativo || \"\").trim(),\n  current_step: (parseInt(previousState.current_step) || 0) !== (updateData.current_step || 0),\n  attemps: (parseInt(previousState.attemps) || 0) !== (updateData.attemps || 0),\n  pending_question: (previousState.pending_question || \"\").trim() !== (updateData.pending_question || \"\").trim(),\n  MQL1: toBool(previousState.MQL1) !== toBool(updateData.MQL1),\n  MQL2: toBool(previousState.MQL2) !== toBool(updateData.MQL2),\n  mode: (previousState.mode || \"\").trim() !== (updateData.mode || \"\").trim()\n};\n\nconst hasChanges = Object.values(changes).some(changed => changed === true);\n\nconsole.log('Change details:', JSON.stringify(changes, null, 2));\nconsole.log('Has any changes:', hasChanges);\n\n// CRITERIOS MEJORADOS para determinar si debe actualizar\nconst shouldUpdate = hasChanges || \n                     (previousState.last_message || \"\").trim() !== (input.userMessage || \"\").trim() ||\n                     mode === \"qualification\" || // Siempre actualizar en modo calificación\n                     input.needsToAskQuestion; // Siempre actualizar cuando necesita hacer pregunta\n\nif (!shouldUpdate) {\n  console.log('No significant changes detected - skipping update');\n  return {\n    json: {\n      skipUpdate: true,\n      reason: \"no_changes\"\n    }\n  };\n}\n\n// Aplicar lógica de calificación MQL final\nif (updateData.razon_social && updateData.razon_social.trim().length > 0 && \n    updateData.giro_negocio && updateData.giro_negocio.trim().length > 0) {\n  updateData.MQL1 = true;\n  console.log(\"✅ MQL1 activado - tiene razón social y giro de negocio\");\n  \n  if (updateData.correo_corporativo && \n      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(updateData.correo_corporativo.trim())) {\n    updateData.MQL2 = true;\n    console.log(\"✅ MQL2 activado - tiene email corporativo válido\");\n  }\n}\n\nconsole.log('UPDATING EXISTING CONTACT:', JSON.stringify(updateData, null, 2));\n\nreturn {\n  json: {\n    ...updateData,\n    skipUpdate: false,\n    operation: \"update\" // Indicar que es actualización\n  }\n};"
+      },
+      "id": "72447eda-6b32-42af-abc3-634c0a6fb87e",
+      "name": "Extract Chat Data1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        608
+      ],
+      "alwaysOutputData": true,
+      "properties": {
+        "mode": "runOnceForAllItems",
+        "language": "JavaScript"
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg",
+          "mode": "list",
+          "cachedResultName": "MQL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "update_lead": "={{ $json.update_lead }}",
+            "phone": "={{ $json.phone }}"
+          },
+          "matchingColumns": [
+            "phone"
+          ],
+          "schema": [
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre",
+              "displayName": "nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "empresa",
+              "displayName": "empresa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "industria",
+              "displayName": "industria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "empleados",
+              "displayName": "empleados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ip",
+              "displayName": "ip",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MQL1",
+              "displayName": "MQL1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Presencia en redes",
+              "displayName": "Presencia en redes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MQL2",
+              "displayName": "MQL2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "OK",
+              "displayName": "OK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "id_lead",
+              "displayName": "id_lead",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "update_lead",
+              "displayName": "update_lead",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "razon_social",
+              "displayName": "razon_social",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "giro_negocio",
+              "displayName": "giro_negocio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "correo_corporativo",
+              "displayName": "correo_corporativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "attemps",
+              "displayName": "attemps",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "current_step",
+              "displayName": "current_step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pending_question",
+              "displayName": "pending_question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_new_contac",
+              "displayName": "is_new_contac",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "last_message",
+              "displayName": "last_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "skipUpdate",
+              "displayName": "skipUpdate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_new_contact",
+              "displayName": "is_new_contact",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "presencia_redes",
+              "displayName": "presencia_redes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "operation",
+              "displayName": "operation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reason",
+              "displayName": "reason",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "debug",
+              "displayName": "debug",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        752,
+        608
+      ],
+      "id": "63d1fe79-4225-473e-8482-c241f9e5d9f2",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-08T13:51:45.701Z",
+      "updatedAt": "2025-09-08T13:51:45.701Z",
+      "role": "workflow:owner",
+      "workflowId": "Iao0KAjcDxq4VZ3l",
+      "projectId": "IcIKCrtLDXlTBTP5"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-09T04:55:42.000Z",
+  "versionId": "1ee79b3a-1202-46aa-b863-5bcdd2c23937"
+}
