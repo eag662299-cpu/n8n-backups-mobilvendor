@@ -1,0 +1,1633 @@
+{
+  "active": false,
+  "connections": {
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store1": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Extract Gemini 2.5 flash",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split by Page": {
+      "main": [
+        [
+          {
+            "node": "Britrix File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Gemini 2.5 flash": {
+      "main": [
+        [
+          {
+            "node": "Split by Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match Bitrix File + Build Metadata": {
+      "main": [
+        [
+          {
+            "node": "Prepare Documents for Pinecone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Britrix File": {
+      "main": [
+        [
+          {
+            "node": "Match Bitrix File + Build Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Documents for Pinecone": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split by Page1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Documents for Pinecone1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Documents for Pinecone1": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Archivos pendientes procesar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bitrix Recursive Extractor": {
+      "main": [
+        [
+          {
+            "node": "Filtrar No Procesados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dowload": {
+      "main": [
+        [
+          {
+            "node": "Prepara Base 64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Dowload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Base 64": {
+      "main": [
+        [
+          {
+            "node": "Extract Gemini 2.5 flash3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Gemini 2.5 flash1": {
+      "main": [
+        []
+      ]
+    },
+    "Archivos pendientes procesar": {
+      "main": [
+        [
+          {
+            "node": "Bitrix Recursive Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar No Procesados": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Gemini 2.5 flash3": {
+      "main": [
+        [
+          {
+            "node": "Split by Page1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-18T02:08:34.270Z",
+  "id": "qyVsaeyyEwGm28lm",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "kb227001-prue",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        512,
+        288
+      ],
+      "id": "8875a869-3643-4b03-8e00-437135b8be2f",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3088,
+        224
+      ],
+      "id": "4b298c4c-fe8c-46cf-b64e-b9f45bd2b715",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "content": "## 📊 PROCESAMIENTO ISO27001 - METADATA COMPLETA\n\n### ✅ Correcciones aplicadas:\n1. **Metadata del archivo preservada** en todos los nodos\n2. **source_url real** desde Google Drive\n3. **document name correcto** desde fileData\n4. **Tracking completo** en Google Sheets\n\n### 📋 Metadata en Pinecone:\n- document: Nombre del archivo\n- fileId: ID de Google Drive\n- source_url: Link directo al archivo\n- page: Número de página\n- fragment: Índice del fragmento\n- section: Clasificación (null por ahora)\n- textLength: Longitud del texto\n- compliance: ISO27001:2022",
+        "height": 800,
+        "width": 976,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "c3eb5644-ebc7-4e6d-89a4-7caa5bec9afe",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## PROCESSING",
+        "height": 800,
+        "width": 1824
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1088,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "70be73d9-4e2f-432b-886c-0090db7c87a0",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2112,
+        432
+      ],
+      "id": "8e1f68fc-b47e-4d89-8434-33d233b729ce",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "iso-27001",
+          "mode": "list",
+          "cachedResultName": "iso-27001"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        2112,
+        224
+      ],
+      "id": "3840e677-46f3-4494-91f1-d457171068f4",
+      "name": "Pinecone Vector Store1",
+      "credentials": {
+        "pineconeApi": {
+          "id": "bqNx5oAwXmTYQGz2",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        768,
+        256
+      ],
+      "id": "41c8b411-22e9-4759-92ea-ebaa201081aa",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "115PEGqrYWp7bE3Htho81ScIzQFsKW4jb",
+          "mode": "list",
+          "cachedResultName": "ISO27001_Mobilvendor",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/115PEGqrYWp7bE3Htho81ScIzQFsKW4jb"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        144,
+        496
+      ],
+      "id": "296f5d1d-5437-48a5-a272-f687fd4eeb92",
+      "name": "Google Drive Trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "nS2jCbjxOoaDloUK",
+          "name": "Google Drive account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1eFsniRtrOQ6mho4-9tyTPFdPd_Hlz7gmDxayAldA4w8",
+          "mode": "list",
+          "cachedResultName": "KB ISO27001"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "file_name": "={{ $('Download file').first().json.originalFilename }}",
+            "file_id": "={{ $('Download file').first().json.id }}",
+            "pinecone_index": "iso-27001",
+            "processing_start": "={{ $('Download file').first().json.createdTime }}",
+            "processing_end": "={{ $now.toISO() }}",
+            "status": " success",
+            "source_url": "={{ $('Match Bitrix File + Build Metadata').first().json.bitrixViewUrl }}",
+            "total_page": "={{ $('Split by Page').all().length }}",
+            "total_fragments": "={{ $('Split by Page').all().length }}",
+            "total_text_lenght": "={{ $('Split by Page').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) }}",
+            "avg_fragment_size": "={{ Math.round($('Split by Page').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) / $('Split by Page').all().length) }}",
+            "file_size_bytes": "={{ $('Download file').first().json.size }}",
+            "mime_type": "={{ $('Download file').first().json.mimeType }}",
+            "md5_checksum": "={{ $('Download file').first().json.md5Checksum }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "file_name",
+              "displayName": "file_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "file_id",
+              "displayName": "file_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_url",
+              "displayName": "source_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pinecone_index",
+              "displayName": "pinecone_index",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "processing_start",
+              "displayName": "processing_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "processing_end",
+              "displayName": "processing_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_page",
+              "displayName": "total_page",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_fragments",
+              "displayName": "total_fragments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_text_lenght",
+              "displayName": "total_text_lenght",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "avg_fragment_size",
+              "displayName": "avg_fragment_size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "file_size_bytes",
+              "displayName": "file_size_bytes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mime_type",
+              "displayName": "mime_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "md5_checksum",
+              "displayName": "md5_checksum",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2624,
+        224
+      ],
+      "id": "5296f412-1f3d-4085-83d9-a9bf1b875ada",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = [];\n\nfor (const item of $input.all()) {\n  const binary = item.binary;\n\n  // Asumiendo que el archivo descargado se llama 'data' en el objeto binary:\n  if (binary && binary.data) {\n    const file = binary.data;\n    const base64Content = file.data; // El dato binario ya suele estar en base64 en n8n\n\n    // Crear un nuevo item con la metadata necesaria para el prompt\n    items.push({\n      json: {\n        fileName: file.fileName,\n        fileType: file.mimeType,\n        base64Data: base64Content,\n        urlDefault: \"https://default.url/del/documento\" // La URL por defecto\n      }\n    });\n  } else {\n    // Manejo de error si no se encuentra el archivo binario\n    items.push({ json: { error: 'No se encontró el archivo binario esperado.' } });\n  }\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1104,
+        224
+      ],
+      "id": "b52a916c-7abf-48b3-988a-fe1ccb37533f",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawText = $json.candidates?.[0]?.content?.parts?.[0]?.text;\n\nif (!rawText) {\n  throw new Error('No se recibió respuesta de Gemini');\n}\n\nlet dataObject;\ntry {\n  dataObject = JSON.parse(rawText);\n} catch (error) {\n  const cleanText = rawText.replace(/```json|```/g, '').trim();\n  try {\n    dataObject = JSON.parse(cleanText);\n  } catch (e) {\n    throw new Error('La respuesta de Gemini no es un JSON válido: ' + e.message);\n  }\n}\n\nconst pages = dataObject.document_pages || [];\n\nif (pages.length === 0) {\n  throw new Error('No se encontraron páginas en la respuesta');\n}\n\n// Obtener metadata del input\nconst inputData = $input.first().json;\nconst fileId = inputData.fileId;\n\n\nreturn pages.map((pageItem) => ({\n  json: {\n    page: pageItem.page,\n    section: pageItem.section || 'General',\n    description: pageItem.description || '',\n    text: pageItem.text || '',\n    tables: pageItem.tables || [],\n    images_desc: pageItem.images_desc || [],\n    fileName: pageItem.fileName || 'desconocido',\n    fileId: fileId,\n    url: pageItem.url || ''\n  }\n}));\n"
+      },
+      "id": "fae8be4e-04d7-4988-849f-b67a2f2d050b",
+      "name": "Split by Page",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        224
+      ],
+      "//note": "Extrae el contenido dividido por páginas reales para cumplir el PRD ISO27001"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCGFxTcJBUCcA3_3NSALZBrw4mRUwovt8s",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Eres un experto analista de documentos.\\n\\nNOMBRE DEL ARCHIVO A PROCESAR: {{ $json.fileName }}\\n\\nREGLA DE IDIOMA (OBLIGATORIA): \\nTodo el contenido generado (descripciones, análisis, títulos de secciones, descripciones de imágenes) DEBE estar escrito en ESPAÑOL. No uses inglés para describir el contenido.\\n\\nINSTRUCCIONES CRÍTICAS PARA TABLAS:\\n1. Busca visualmente CUALQUIER estructura de filas y columnas (como el análisis PESTEL).\\n2. Extrae toda la información de las tablas en el campo 'tables'. NO las ignores.\\n3. En 'content_json', usa un formato JSON stringificado o Markdown para representar fielmente los datos de la tabla.\\n\\nTU OBJETIVO: Procesa el archivo adjunto página por página. En cada objeto de 'document_pages', el campo 'fileName' DEBE ser '{{ $json.fileName }}' y devuelve la estructura JSON requerida en 'generationConfig'.\"\n        },\n        {\n          \"inlineData\": {\n            \"mimeType\": \"{{$json.fileType}}\",\n            \"data\": \"{{$json.base64Data}}\"\n          }\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"application/json\",\n    \"responseSchema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"document_pages\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"fileName\": { \"type\": \"string\" },\n              \"url\": { \"type\": \"string\" },\n              \"page\": { \"type\": \"integer\" },\n              \"section\": { \"type\": \"string\", \"description\": \"Nombre de la sección en ESPAÑOL\" },\n              \"description\": { \"type\": \"string\", \"description\": \"Breve descripción del contenido de la página en ESPAÑOL\" },\n              \"text\": { \"type\": \"string\" },\n              \"tables\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"table_title\": { \"type\": \"string\", \"description\": \"Título de la tabla en ESPAÑOL\" },\n                    \"content_json\": { \"type\": \"string\" }\n                  }\n                }\n              },\n              \"images_desc\": {\n                \"type\": \"array\",\n                \"items\": { \"type\": \"string\", \"description\": \"Descripción detallada de la imagen en ESPAÑOL\" }\n              }\n            }\n          }\n        }\n      },\n      \"required\": [\"document_pages\"]\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1264,
+        224
+      ],
+      "id": "9bf825d5-4bcf-4467-9e5b-03cddbc3a529",
+      "name": "Extract Gemini 2.5 flash"
+    },
+    {
+      "parameters": {
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "document",
+                "value": "={{ $json.metadata.document }}"
+              },
+              {
+                "name": "page",
+                "value": "={{ $json.metadata.page }}"
+              },
+              {
+                "name": "section",
+                "value": "={{ $json.metadata.section }}"
+              },
+              {
+                "name": "description",
+                "value": "={{ $json.metadata.description }}"
+              },
+              {
+                "name": "textLenght",
+                "value": "={{ $json.metadata.textLength }}"
+              },
+              {
+                "name": "hasTable",
+                "value": "={{ $json.metadata.hasTable }}"
+              },
+              {
+                "name": "tableCount",
+                "value": "={{ $json.metadata.tableCount }}"
+              },
+              {
+                "name": "hasImages",
+                "value": "={{ $json.metadata.hasImages }}"
+              },
+              {
+                "name": "imageCount",
+                "value": "={{ $json.metadata.imageCount }}"
+              },
+              {
+                "name": "source_url",
+                "value": "={{ $json.metadata.source_url }}"
+              },
+              {
+                "name": "compliance",
+                "value": "={{ $json.metadata.compliance }}"
+              },
+              {
+                "name": "processedAt",
+                "value": "={{ $json.metadata.processedAt }}"
+              },
+              {
+                "name": "bitrixId",
+                "value": "={{ $json.metadata.bitrixId }}"
+              },
+              {
+                "name": "ubicacion",
+                "value": "={{ $json.metadata.ubicacion }}"
+              },
+              {
+                "name": "bitrixDetailUrl",
+                "value": "={{ $json.metadata.bitrixDetailUrl }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        432
+      ],
+      "id": "c883ba9a-a1f9-4642-8146-b4263a68e1d1",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 200,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2272,
+        656
+      ],
+      "id": "89fe4b95-086d-4099-9e3c-9ff013e5c304",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input: fileName desde Google Drive\n// Input: lista de archivos Bitrix desde el HTTP Request\n// Este code encuentra el archivo correspondiente, arma la URL y el campo \"Ubicacion\"\n\nconst googleFile = $json.originalFilename || $('Code').first().json.fileName;\nif (!googleFile) {\n  throw new Error(\"No se encontró el nombre del archivo para hacer el match.\");\n}\n\nconst bitrixList = $('Britrix File').first().json.result;\nif (!bitrixList || !Array.isArray(bitrixList)) {\n  throw new Error(\"No llegó la lista de archivos Bitrix.\");\n}\n\n// 1. Buscar el archivo en Bitrix que coincide EXACTO con el nombre\nconst match = bitrixList.find(f => f.NAME.trim() === googleFile.trim());\n\nif (!match) {\n  return [{\n    json: {\n      error: \"No se encontró match en Bitrix\",\n      googleFile\n    }\n  }];\n}\n\n// 2. Construir la URL de visualización\nconst objectId = match.ID;\nconst visualUrl = `https://mobilvendor.bitrix24.es/bitrix/tools/disk/focus.php?objectId=${objectId}&cmd=show&action=showObjectInGrid&ncc=1`;\n\n// 3. Obtener la Ubicacion desde el DETAIL_URL\n//    Ejemplo DETAIL_URL:\n//    https://mobilvendor.bitrix24.es/docs/file/ISO27001_2022/Seguridad de la Información/Requisitos/4 Contexto de la Organización.pdf\n\nconst detail = match.DETAIL_URL || \"\";\nlet ubicacion = \"\";\n\nif (detail.includes(\"ISO27001_2022/\")) {\n  const part = detail.split(\"ISO27001_2022/\")[1];\n  \n  // quitar el nombre del archivo al final\n  ubicacion = part.replace(googleFile, \"\").replace(/\\/$/, \"\");\n}\n\n// Devolver merge para que lo uses en Pinecone\nreturn [{\n  json: {\n    bitrixId: match.ID,\n    bitrixFileName: match.NAME,\n    bitrixDetail: match.DETAIL_URL,\n    bitrixViewUrl: visualUrl,\n    ubicacion\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1744,
+        224
+      ],
+      "id": "cf4f2eb1-2879-41b4-a18f-d96863fb68ca",
+      "name": "Match Bitrix File + Build Metadata"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mobilvendor.bitrix24.es/rest/1/ghq4a7p2r32rd5u9/disk.folder.getchildren.json",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"id\": \"20767\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1584,
+        224
+      ],
+      "id": "b889c13d-4e09-4dde-8822-dd6f33e546d4",
+      "name": "Britrix File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const pages = $('Split by Page').all().map(i => i.json);\nconst bitrix = $('Match Bitrix File + Build Metadata').first().json || {};\n\nconst items = [];\n\nfor (const pageData of pages) {\n\n  let fullPageContent = '';\n\n  // 🔹 Texto\n  if (pageData.text) {\n    fullPageContent += pageData.text + '\\n\\n';\n  }\n\n  // 🔹 Tablas\n  if (pageData.tables && pageData.tables.length > 0) {\n    fullPageContent += '=== TABLAS ===\\n';\n    pageData.tables.forEach((table, idx) => {\n      fullPageContent += `\\n--- Tabla ${idx + 1}: ${table.table_title || 'Sin título'} ---\\n`;\n      fullPageContent += table.content_json + '\\n';\n    });\n    fullPageContent += '\\n';\n  }\n\n  // 🔹 Imágenes\n  if (pageData.images_desc && pageData.images_desc.length > 0) {\n    fullPageContent += '=== IMÁGENES ===\\n';\n    pageData.images_desc.forEach((imgDesc, idx) => {\n      fullPageContent += `Imagen ${idx + 1}: ${imgDesc}\\n`;\n    });\n  }\n\n  // 🔥 ARMAR EL JSON FINAL QUE VA A PINECONE\n  items.push({\n    json: {\n      pageContent: fullPageContent.trim(),\n      metadata: {\n        // 🔥 Metadata real del documento\n        document: pageData.fileName,\n        fileId: pageData.fileId,\n        source_url: bitrix.bitrixViewUrl || pageData.url,\n\n        // 🔥 Metadata de Bitrix\n        bitrixId: bitrix.bitrixId || '',\n        ubicacion: bitrix.ubicacion || '',\n        bitrixDetailUrl: bitrix.bitrixDetail || '',\n\n        // 🔥 Metadata por página\n        page: pageData.page,\n        section: pageData.section,\n        description: pageData.description,\n        textLength: fullPageContent.length,\n        hasTable: (pageData.tables?.length || 0) > 0,\n        tableCount: pageData.tables?.length || 0,\n        hasImages: (pageData.images_desc?.length || 0) > 0,\n        imageCount: pageData.images_desc?.length || 0,\n\n        // 🔥 ISO\n        compliance: 'ISO27001:2022',\n        processedAt: new Date().toISOString()\n      }\n    }\n  });\n}\n\nreturn items;\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1920,
+        224
+      ],
+      "id": "1436bdc6-edd4-4144-a278-d3e64e329d3a",
+      "name": "Prepare Documents for Pinecone"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1984,
+        1456
+      ],
+      "id": "916d9abb-e859-4147-a360-be232d6643f9",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "iso-27001",
+          "mode": "list",
+          "cachedResultName": "iso-27001"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        1984,
+        1232
+      ],
+      "id": "996dfa96-bf56-456a-881d-39c69bab4045",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "pOOSmWGE6fHNq5oR",
+          "name": "PineconeApi EA"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12bnCBdL8vZcjt9UmEcwalDWZjqg0qNmmtOTDxTe5eBA",
+          "mode": "list",
+          "cachedResultName": "KB ISO27001 EA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12bnCBdL8vZcjt9UmEcwalDWZjqg0qNmmtOTDxTe5eBA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "file_name": "={{ $json.metadata.document }}",
+            "file_id": "={{ $json.metadata.bitrixId }}",
+            "pinecone_index": "iso-27001",
+            "processing_end": "={{ $now.toISO() }}",
+            "status": " success",
+            "source_url": "={{ $json.metadata.source_url }}",
+            "total_page": "={{ $('Split by Page1').all().length }}",
+            "total_fragments": "={{ $('Split by Page1').all().length }}",
+            "total_text_lenght": "={{ $('Split by Page1').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) }}",
+            "avg_fragment_size": "={{ Math.round($('Split by Page1').all().reduce((sum, item) => sum + (item.json.text?.length || 0), 0) / $('Split by Page1').all().length) }}",
+            "ubicacion": "={{ $json.metadata.ubicacion }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "file_name",
+              "displayName": "file_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "file_id",
+              "displayName": "file_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_url",
+              "displayName": "source_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ubicacion",
+              "displayName": "ubicacion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pinecone_index",
+              "displayName": "pinecone_index",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "processing_start",
+              "displayName": "processing_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "processing_end",
+              "displayName": "processing_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_page",
+              "displayName": "total_page",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_fragments",
+              "displayName": "total_fragments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_text_lenght",
+              "displayName": "total_text_lenght",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "avg_fragment_size",
+              "displayName": "avg_fragment_size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "file_size_bytes",
+              "displayName": "file_size_bytes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mime_type",
+              "displayName": "mime_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "md5_checksum",
+              "displayName": "md5_checksum",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2304,
+        1232
+      ],
+      "id": "f157cabf-6b33-4123-bf29-6ee3c3df40c0",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = [];\n\nfor (const item of $input.all()) {\n  const text = item.json.candidates[0].content.parts[0].text;\n  \n  let data;\n  try {\n    data = JSON.parse(text);\n  } catch (e) {\n    continue;\n  }\n\n  if (!data.document_pages) continue;\n\n  for (const page of data.document_pages) {\n    output.push({\n      json: {\n        fileName: page.fileName || item.json.fileName,\n        bitrixId: page.bitrixId,\n        bitrixDetailUrl: page.bitrixDetailUrl,\n        text: page.text,\n        page: page.page,\n        description: page.description,\n        tables: page.tables,\n        images: page.images_desc,\n        source_url: page.source_url,\n        ubicacion: page.ubicacion\n      }\n    });\n  }\n}\n\nreturn output;\n"
+      },
+      "id": "e61c46a5-fe57-4d77-bb17-113005e8ff72",
+      "name": "Split by Page1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        1232
+      ],
+      "//note": "Extrae el contenido dividido por páginas reales para cumplir el PRD ISO27001"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.pageContent}}",
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "document",
+                "value": "={{ $json.metadata.document }}"
+              },
+              {
+                "name": "page",
+                "value": "={{ $json.metadata.page }}"
+              },
+              {
+                "name": "section",
+                "value": "={{ $json.metadata.section }}"
+              },
+              {
+                "name": "description",
+                "value": "={{ $json.metadata.description }}"
+              },
+              {
+                "name": "textLenght",
+                "value": "={{ $json.metadata.textLength }}"
+              },
+              {
+                "name": "hasTable",
+                "value": "={{ $json.metadata.hasTable }}"
+              },
+              {
+                "name": "tableCount",
+                "value": "={{ $json.metadata.tableCount }}"
+              },
+              {
+                "name": "hasImages",
+                "value": "={{ $json.metadata.hasImages }}"
+              },
+              {
+                "name": "imageCount",
+                "value": "={{ $json.metadata.imageCount }}"
+              },
+              {
+                "name": "source_url",
+                "value": "={{ $json.metadata.source_url }}"
+              },
+              {
+                "name": "compliance",
+                "value": "={{ $json.metadata.compliance }}"
+              },
+              {
+                "name": "processedAt",
+                "value": "={{ $json.metadata.processedAt }}"
+              },
+              {
+                "name": "bitrixId",
+                "value": "={{ $json.metadata.bitrixId }}"
+              },
+              {
+                "name": "ubicacion",
+                "value": "={{ $json.metadata.ubicacion }}"
+              },
+              {
+                "name": "bitrixDetailUrl",
+                "value": "={{ $json.metadata.bitrixDetailUrl }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        2112,
+        1440
+      ],
+      "id": "d791faad-1c68-4229-ad8d-7c3018c9e73d",
+      "name": "Default Data Loader1"
+    },
+    {
+      "parameters": {
+        "chunkSize": 20000,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2112,
+        1696
+      ],
+      "id": "e52c6bce-e87d-45eb-9253-afa5b2dae2bf",
+      "name": "Recursive Character Text Splitter1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===============================================\n// PREPARE DOCUMENTS FOR PINECONE\n// Combina contenido de páginas con metadata de Bitrix\n// ===============================================\n\nconst pages = $input.all().map(i => i.json);\n\nif (!pages || pages.length === 0) {\n  throw new Error('No se recibieron páginas para procesar');\n}\n\nconst items = [];\n\nfor (const pageData of pages) {\n  \n  // ===============================================\n  // 1. CONSTRUIR CONTENIDO COMPLETO DE LA PÁGINA\n  // ===============================================\n  let fullPageContent = '';\n\n  // 🔹 Texto principal\n  if (pageData.text) {\n    fullPageContent += pageData.text + '\\n\\n';\n  }\n\n  // 🔹 Tablas (si existen)\n  if (pageData.tables && pageData.tables.length > 0) {\n    fullPageContent += '=== TABLAS ===\\n';\n    pageData.tables.forEach((table, idx) => {\n      fullPageContent += `\\n--- Tabla ${idx + 1}: ${table.table_title || 'Sin título'} ---\\n`;\n      fullPageContent += table.content_json + '\\n';\n    });\n    fullPageContent += '\\n';\n  }\n\n  // 🔹 Descripciones de imágenes (si existen)\n  if (pageData.images_desc && pageData.images_desc.length > 0) {\n    fullPageContent += '=== IMÁGENES ===\\n';\n    pageData.images_desc.forEach((imgDesc, idx) => {\n      fullPageContent += `Imagen ${idx + 1}: ${imgDesc}\\n`;\n    });\n  }\n\n  // ===============================================\n  // 2. VALIDAR QUE TENEMOS METADATA DE BITRIX\n  // ===============================================\n  if (!pageData.bitrixId || !pageData.ubicacion) {\n    console.warn(`⚠️ Página ${pageData.page} sin metadata de Bitrix completa`);\n  }\n\n  // ===============================================\n  // 3. ARMAR DOCUMENTO PARA PINECONE\n  // ===============================================\n  items.push({\n    json: {\n      pageContent: fullPageContent.trim(),\n      metadata: {\n        // 📄 Metadata del documento\n        document: pageData.fileName || 'documento_sin_nombre.pdf',\n        source_url: pageData.source_url || '',\n        \n        // 📁 Metadata de Bitrix (ubicación en carpetas)\n        bitrixId: pageData.bitrixId || '',\n        ubicacion: pageData.ubicacion || '',\n        bitrixDetailUrl: pageData.bitrixDetailUrl || '',\n        \n        // 📖 Metadata específica de la página\n        page: pageData.page || 0,\n        section: pageData.section || 'General',\n        description: pageData.description || '',\n        \n        // 📊 Metadata de contenido\n        textLength: fullPageContent.length,\n        hasTable: (pageData.tables?.length || 0) > 0,\n        tableCount: pageData.tables?.length || 0,\n        hasImages: (pageData.images_desc?.length || 0) > 0,\n        imageCount: pageData.images_desc?.length || 0,\n        \n        // 🔐 Metadata de compliance\n        compliance: 'ISO27001:2022',\n        processedAt: new Date().toISOString()\n      }\n    }\n  });\n}\n\n// ===============================================\n// 🔥 SIEMPRE RETORNAR ARRAY DE ITEMS\n// ===============================================\nreturn items;\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1776,
+        1232
+      ],
+      "id": "0d085241-e3bb-4112-b47e-58f3d9bf0d9d",
+      "name": "Prepare Documents for Pinecone1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===============================================\n//  CONFIG\n// ===============================================\nconst BITRIX_URL = \"https://mobilvendor.bitrix24.es/rest/1/ghq4a7p2r32rd5u9/\";\nconst ROOT_FOLDER = \"20123\";\n\n// ===============================================\n//  Obtener hijos de carpeta Bitrix\n// ===============================================\nasync function getChildren(folderId, ctx) {\n  const response = await ctx.helpers.httpRequest({\n    method: \"POST\",\n    url: `${BITRIX_URL}disk.folder.getchildren.json`,\n    body: { id: folderId },\n    json: true\n  });\n  return response.result || [];\n}\n\n// ===============================================\n//  Recorrido recursivo\n// ===============================================\nasync function scanFolder(folderId, currentPath, ctx) {\n  let results = [];\n  const children = await getChildren(folderId, ctx);\n\n  for (const item of children) {\n    // ---------- SUBCARPETA ----------\n    if (item.TYPE === \"folder\") {\n      // ✅ CORREGIDO: Agregar '/' solo si currentPath no está vacío\n      const separator = currentPath ? \"/\" : \"\";\n      const newPath = currentPath + separator + item.NAME;\n      const sub = await scanFolder(item.ID, newPath, ctx);\n      results.push(...sub);\n    }\n\n    // ---------- ARCHIVO ----------\n    if (item.TYPE === \"file\") {\n      const name = item.NAME || \"\";\n      const ext = name.includes(\".\")\n        ? name.split(\".\").pop().toLowerCase()\n        : \"\";\n\n      results.push({\n        fileName: name,\n        tipo: ext,\n        extension: ext,\n        ubicacion: currentPath, // ✅ Sin '/' al final\n        bitrixId: item.ID,\n        bitrixDetailUrl: item.DETAIL_URL,\n        bitrixDownload: item.DOWNLOAD_URL,\n        bitrixViewUrl: `https://mobilvendor.bitrix24.es/bitrix/tools/disk/focus.php?objectId=${item.ID}&cmd=show&action=showObjectInGrid&ncc=1`\n      });\n    }\n  }\n  return results;\n}\n\n\n// ===============================================\n//  EJECUCIÓN\n// ===============================================\nconst output = await scanFolder(ROOT_FOLDER, \"\", this);\n\nreturn output.map(e => ({ json: e }));\n"
+      },
+      "id": "42853498-0d0b-4866-a438-819cf9b6cfe9",
+      "name": "Bitrix Recursive Extractor",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        128,
+        1248
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        1248
+      ],
+      "id": "e1b508fb-1ed9-417d-ab1b-6ae0ca703409",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b352b807-20aa-4304-b24f-f0b4e33dff6a",
+              "leftValue": "={{ $json.extension }}",
+              "rightValue": "pdf",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        1248
+      ],
+      "id": "5b01641f-3580-4675-b443-6f1a08585db9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.bitrixDownload }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1008,
+        1232
+      ],
+      "id": "4c417f12-a3d9-49e1-9105-e563c0133b40",
+      "name": "Dowload"
+    },
+    {
+      "parameters": {
+        "batchSize": 4,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        736,
+        1232
+      ],
+      "id": "87151b1e-0c84-4f83-b710-1495dae31d03",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = [];\n\nfor (const input of $input.all()) {\n\n  // -----------------------------\n  // 1. Detectar binario descargado desde Bitrix\n  // -----------------------------\n  const binary = input.binary;\n\n  if (binary && binary.data) {\n\n    const file = binary.data;\n\n    items.push({\n      json: {\n        fileName: input.json.fileName || \"archivo.pdf\",\n        fileType: file.mimeType || \"application/pdf\",\n        base64Data: file.data,     // <-- ESTA es la data base64 correcta\n        bitrixId: input.json.bitrixId,\n        bitrixDetailUrl: input.json.bitrixDetailUrl,\n        source_url: input.json.bitrixViewUrl,\n        ubicacion: input.json.ubicacion\n      }\n    });\n\n  } else {\n    // -----------------------------\n    // ERROR: no llegó el binario\n    // -----------------------------\n    items.push({\n      json: {\n        error: \"No se encontró el archivo binario esperado.\",\n        debug: input\n      }\n    });\n  }\n}\n\nreturn items;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1184,
+        1232
+      ],
+      "id": "4033155e-6a84-42c5-991c-feacdbbd115f",
+      "name": "Prepara Base 64"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1456,
+        1488
+      ],
+      "id": "51c1a304-e0cb-4ccf-9dba-65b2c11081fe",
+      "name": "Wait",
+      "webhookId": "e5050b4b-75ec-4f9f-9340-f9910a4be015"
+    },
+    {
+      "parameters": {
+        "jsCode": "// =======================================================\n//  GEMINI CALL WITH ROTATION + FALLBACK + N8N VARIABLES\n// =======================================================\n\n// 1) TUS API KEYS (pon aquí tus 3 claves reales)\nconst API_KEYS = [\n  //\"AIzaSyDhQYObKtsU0gK0n_-2ZlUSL2oxf4hgkv0\",\n  //\"AIzaSyCD1Yki3PCdqndBYPprSVKaPOhUcAmJqO4\",\n  \"AIzaSyARTwSzNKTbBYNkM2gkpH7-yr8g_jxSZyc\"\n];\n\n// 2) Variables que vienen del nodo anterior (idénticas a tu flujo)\nconst fileName = $json.fileName;\nconst bitrixId = $json.bitrixId;\nconst bitrixDetailUrl = $json.bitrixDetailUrl;\nconst source_url = $json.source_url;\nconst ubicacion = $json.ubicacion;\nconst fileType = $json.fileType;\nconst base64Data = $json.base64Data;\n\n// =======================================================\n// 3) EL MISMO PROMPT QUE USAS EN EL SEND BODY\n// =======================================================\n\nconst promptText = `\nEres un experto analista de documentos.\n\nNOMBRE DEL ARCHIVO A PROCESAR: ${fileName}\n\nREGLA DE IDIOMA (OBLIGATORIA):\nTodo el contenido generado (descripciones, análisis, títulos de secciones, descripciones de imágenes) DEBE estar escrito en ESPAÑOL.\n\nINSTRUCCIONES CRÍTICAS PARA TABLAS:\n1. Busca visualmente CUALQUIER estructura de filas y columnas (como análisis FODA, PESTEL, matrices, comparativos, etc.).\n2. Extrae toda la información de las tablas en el campo 'tables'. NO las ignores.\n3. En 'content_json', usa un formato JSON stringificado o Markdown para representar fielmente los datos de la tabla.\n\nTU OBJETIVO:\nProcesa el archivo adjunto página por página.\nEn cada objeto de 'document_pages', los campos 'fileName', 'bitrixId', 'bitrixDetailUrl', 'source_url' y 'ubicacion'\ndeben ser:\n\n${fileName},\n${bitrixId},\n${bitrixDetailUrl},\n${source_url},\n${ubicacion}\n\nDevuelve la estructura JSON requerida en 'generationConfig'.\n`;\n\n// =======================================================\n// 4) BODY EXACTO IGUAL A TU sendBody ORIGINAL\n// =======================================================\n\nfunction buildRequestBody() {\n  return {\n    contents: [\n      {\n        parts: [\n          { text: promptText },\n          {\n            inlineData: {\n              mimeType: fileType,\n              data: base64Data\n            }\n          }\n        ]\n      }\n    ],\n    generationConfig: {\n      responseMimeType: \"application/json\",\n      responseSchema: {\n        type: \"object\",\n        properties: {\n          document_pages: {\n            type: \"array\",\n            items: {\n              type: \"object\",\n              properties: {\n                fileName: { type: \"string\" },\n                url: { type: \"string\" },\n                page: { type: \"integer\" },\n                section: { type: \"string\" },\n                description: { type: \"string\" },\n                text: { type: \"string\" },\n                tables: {\n                  type: \"array\",\n                  items: {\n                    type: \"object\",\n                    properties: {\n                      table_title: { type: \"string\" },\n                      content_json: { type: \"string\" }\n                    }\n                  }\n                },\n                images_desc: {\n                  type: \"array\",\n                  items: { type: \"string\" }\n                },\n                bitrixId: { type: \"string\" },\n                bitrixDetailUrl: { type: \"string\" },\n                source_url: { type: \"string\" },\n                ubicacion: { type: \"string\" }\n              }\n            }\n          }\n        },\n        required: [\"document_pages\"]\n      }\n    }\n  };\n}\n\n// =======================================================\n// 5) FUNCIÓN PARA LLAMAR A GEMINI\n// =======================================================\n\nasync function callGemini(apiKey) {\n  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;\n\n  try {\n    const response = await this.helpers.httpRequest({\n      method: \"POST\",\n      url,\n      body: buildRequestBody(),\n      json: true,\n      retry: 0\n    });\n\n    return { ok: true, response };\n  } catch (error) {\n    return { ok: false, error };\n  }\n}\n\n// =======================================================\n// 6) ROTACIÓN AUTOMÁTICA + FALLBACK\n// =======================================================\n\nlet attempt = 0;\nwhile (attempt < API_KEYS.length) {\n  const key = API_KEYS[attempt];\n\n  const result = await callGemini.call(this, key);\n\n  if (result.ok) {\n    // ✔ Éxito → devolver la respuesta de Gemini\n    return [{ json: result.response }];\n  }\n\n  const err = result.error;\n  const status = err?.statusCode;\n\n  // Errores que requieren fallback automático\n  const rotateErrors = [400, 429, 500, 503];\n\n  if (rotateErrors.includes(status)) {\n    console.log(`⚠️ Gemini falló con key ${key} (status ${status}). Probando siguiente key...`);\n    attempt++;\n    continue;\n  }\n\n  throw new Error(`❌ Error inesperado: ${JSON.stringify(err)}`);\n}\n\n// Si ninguna funciona:\nthrow new Error(\"❌ Todas las API keys de Gemini fallaron después de 3 intentos.\");\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1392,
+        1024
+      ],
+      "id": "5d01d5ef-ca99-407b-92ec-ce585463e196",
+      "name": "Extract Gemini 2.5 flash1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12bnCBdL8vZcjt9UmEcwalDWZjqg0qNmmtOTDxTe5eBA",
+          "mode": "list",
+          "cachedResultName": "KB ISO27001 EA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12bnCBdL8vZcjt9UmEcwalDWZjqg0qNmmtOTDxTe5eBA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12bnCBdL8vZcjt9UmEcwalDWZjqg0qNmmtOTDxTe5eBA/edit#gid=0"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRange",
+              "firstDataRow": "=2"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -64,
+        1248
+      ],
+      "id": "2689a35f-d924-4800-b4d0-7489a5091853",
+      "name": "Archivos pendientes procesar",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ========================================================\n//     FILTRAR ARCHIVOS NO PROCESADOS (USANDO file_id)\n// ========================================================\n\n// Archivos que vienen del escaneo Bitrix\nconst allFiles = $input.all();\n\n// Filas leídas del Google Sheets \"Hoja 1\"\nconst rows = $items(\"Archivos pendientes procesar\");  \n// Usa EXACTAMENTE el nombre del nodo de Google Sheets\n\n// Convertimos file_id en un Set para comparación rápida\nconst processedIds = new Set(\n  rows\n    .map(r => r.json.file_id)\n    .filter(id => id !== undefined && id !== null)\n    .map(id => id.toString().trim())\n);\n\n// 👉 AGREGAR MANUALMENTE ID 20689 COMO PROCESADO\n// ---------------------------------------------\nprocessedIds.add(\"26713\");\nprocessedIds.add(\"20783\");// <-- este se ignorará siempre\n// ---------------------------------------------\n\n\n// Filtrar solo los archivos cuyo bitrixId NO está en la hoja\nconst pending = allFiles.filter(file => {\n  const id = file.json.bitrixId?.toString().trim();\n  return !processedIds.has(id);\n});\n\n// Si no quedan archivos pendientes → devolver mensaje\nif (pending.length === 0) {\n  return [{\n    json: {\n      message: \"✔ No hay archivos pendientes. Todos los file_id están en Hoja 1.\"\n    }\n  }];\n}\n\nreturn pending;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        1248
+      ],
+      "id": "ad43a052-abdc-40e1-b5cd-77c995da383b",
+      "name": "Filtrar No Procesados"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCEph9PWPkpAoDQESc2GOCeWELxyQfRBUs",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Eres un experto analista de documentos.\\n\\nNOMBRE DEL ARCHIVO A PROCESAR: {{ $json.fileName }}\\n\\nREGLA DE IDIOMA (OBLIGATORIA):\\nTodo el contenido generado (descripciones, análisis, títulos de secciones, descripciones de imágenes) DEBE estar escrito en ESPAÑOL. No uses inglés para describir el contenido.\\n\\nINSTRUCCIONES CRÍTICAS PARA TABLAS:\\n1. Busca visualmente CUALQUIER estructura de filas y columnas (como análisis FODA, PESTEL, matrices, comparativos, etc.).\\n2. Extrae toda la información de las tablas en el campo 'tables'. NO las ignores.\\n3. En 'content_json', usa un formato JSON stringificado o Markdown para representar fielmente los datos de la tabla.\\n\\nTU OBJETIVO: Procesa el archivo adjunto página por página. En cada objeto de 'document_pages', los campos 'fileName', 'bitrixId', 'bitrixDetailUrl', 'source_url' y 'ubicacion' DEBEN provenir de los valores originales del archivo, es decir: {{ $json.fileName }}, {{ $json.bitrixId }}, {{ $json.bitrixDetailUrl }}, {{ $json.source_url }}, {{ $json.ubicacion }}.\\n\\nDevuelve la estructura JSON requerida en 'generationConfig'.\"\n        },\n        {\n          \"inlineData\": {\n            \"mimeType\": \"{{$json.fileType}}\",\n            \"data\": \"{{$json.base64Data}}\"\n          }\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"application/json\",\n    \"responseSchema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"document_pages\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"fileName\": { \"type\": \"string\" },\n              \"url\": { \"type\": \"string\" },\n              \"page\": { \"type\": \"integer\" },\n\n              \"section\": { \"type\": \"string\", \"description\": \"Nombre de la sección en ESPAÑOL\" },\n              \"description\": { \"type\": \"string\", \"description\": \"Breve descripción del contenido de la página en ESPAÑOL\" },\n              \"text\": { \"type\": \"string\" },\n\n              \"tables\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"table_title\": { \"type\": \"string\", \"description\": \"Título de la tabla en ESPAÑOL\" },\n                    \"content_json\": { \"type\": \"string\" }\n                  }\n                }\n              },\n\n              \"images_desc\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"string\",\n                  \"description\": \"Descripción detallada de la imagen en ESPAÑOL\"\n                }\n              },\n\n              \"bitrixId\": { \"type\": \"string\" },\n              \"bitrixDetailUrl\": { \"type\": \"string\" },\n              \"source_url\": { \"type\": \"string\" },\n              \"ubicacion\": { \"type\": \"string\" }\n            }\n          }\n        }\n      },\n      \"required\": [\"document_pages\"]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1392,
+        1232
+      ],
+      "id": "34f79700-693a-4677-b212-2d4108fdbc54",
+      "name": "Extract Gemini 2.5 flash3"
+    }
+  ],
+  "pinData": {
+    "Google Drive Trigger": [
+      {
+        "json": {
+          "parents": [
+            "115PEGqrYWp7bE3Htho81ScIzQFsKW4jb"
+          ],
+          "lastModifyingUser": {
+            "displayName": "Esteban Andrade",
+            "kind": "drive#user",
+            "me": true,
+            "permissionId": "11640919379084974865",
+            "emailAddress": "eag662299@gmail.com",
+            "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocKvb9kQDE_VaTDA-1MkcAzMfKbR2cqCC8jxP1VhEu9E44hLuA=s64"
+          },
+          "owners": [
+            {
+              "displayName": "Esteban Andrade",
+              "kind": "drive#user",
+              "me": true,
+              "permissionId": "11640919379084974865",
+              "emailAddress": "eag662299@gmail.com",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocKvb9kQDE_VaTDA-1MkcAzMfKbR2cqCC8jxP1VhEu9E44hLuA=s64"
+            }
+          ],
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "11640919379084974865",
+              "type": "user",
+              "emailAddress": "eag662299@gmail.com",
+              "role": "owner",
+              "displayName": "Esteban Andrade",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocKvb9kQDE_VaTDA-1MkcAzMfKbR2cqCC8jxP1VhEu9E44hLuA=s64",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "permissionIds": [
+            "11640919379084974865"
+          ],
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "kind": "drive#file",
+          "id": "1Zc4If6Go5-FiAf7TNiEhoWjXKmKFbxBL",
+          "name": "Plan de contingencia DO V1 Ago2025.pdf",
+          "mimeType": "application/pdf",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "version": "3",
+          "webContentLink": "https://drive.google.com/uc?id=1Zc4If6Go5-FiAf7TNiEhoWjXKmKFbxBL&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1Zc4If6Go5-FiAf7TNiEhoWjXKmKFbxBL/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/pdf",
+          "hasThumbnail": true,
+          "thumbnailLink": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMPU4Dpd1cXUgDBHUvVCm0j_5fQBLCzwiNDf80jaOvns7dPiYej51HFaRgu4DAX5ib2cs3Aur51kzzHfi4Rp5tZqCt7R5rymPRwMSG4Sn81lnU=s220",
+          "thumbnailVersion": "1",
+          "viewedByMe": true,
+          "viewedByMeTime": "2025-11-20T01:17:59.226Z",
+          "createdTime": "2025-11-20T01:17:59.226Z",
+          "modifiedTime": "2025-11-19T17:12:07.000Z",
+          "modifiedByMeTime": "2025-11-19T17:12:07.000Z",
+          "modifiedByMe": true,
+          "shared": false,
+          "ownedByMe": true,
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "originalFilename": "Plan de contingencia DO V1 Ago2025.pdf",
+          "fullFileExtension": "pdf",
+          "fileExtension": "pdf",
+          "md5Checksum": "03d0930da663799093fb436d7fa99505",
+          "sha1Checksum": "3f9e11262f8b9838f0ab988184b8b48b33f7a547",
+          "sha256Checksum": "07a8dd66d77f3ab833374e26470673ce19c6201180d8e9f955cce42d4f467d54",
+          "size": "176042",
+          "quotaBytesUsed": "176042",
+          "headRevisionId": "0BwE7fNMGP1UfTWk1L3A1SGZEd3U2SnVtbWpDZkRKTGtabjdFPQ",
+          "isAppAuthorized": false,
+          "inheritedPermissionsDisabled": false
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-18T02:08:34.290Z",
+      "updatedAt": "2025-11-18T02:08:34.290Z",
+      "role": "workflow:owner",
+      "workflowId": "qyVsaeyyEwGm28lm",
+      "projectId": "IcIKCrtLDXlTBTP5"
+    }
+  ],
+  "staticData": {
+    "node:Google Drive Trigger": {
+      "lastTimeChecked": "2025-12-06T03:58:25Z"
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-07T04:22:01.000Z",
+  "versionId": "49581c72-5711-46e6-9fa1-4e991a9acf8e"
+}
