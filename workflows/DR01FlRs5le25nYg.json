@@ -1,0 +1,449 @@
+{
+  "active": true,
+  "connections": {
+    "05 - Crear Suscripción (Manual)": {
+      "main": [
+        [
+          {
+            "node": "06 - Crear Suscripción Graph",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "06 - Crear Suscripción Graph": {
+      "main": [
+        [
+          {
+            "node": "07 - Guardar SubscriptionId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "11 - Renovar Suscripción Graph": {
+      "main": [
+        [
+          {
+            "node": "12 - Log Renovación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "07 - Guardar SubscriptionId": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Preparar renovación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar renovación": {
+      "main": [
+        [
+          {
+            "node": "11 - Renovar Suscripción Graph",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "09 - Trigger Renovación  mensual": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-18T17:50:50.899Z",
+  "id": "DR01FlRs5le25nYg",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "SharePoint BC ZEI - Suscripción",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f5177a4f-7d5c-44ab-8265-022fdcb77756",
+      "name": "05 - Crear Suscripción (Manual)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -96,
+        464
+      ],
+      "typeVersion": 1,
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.microsoft.com/v1.0/subscriptions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"changeType\": \"updated\",\n  \"notificationUrl\": \"https://n8n.mobilvendor.com/webhook/sharepoint-bc-zei-soporte-fw\",\n  \"resource\": \"/drives/b!hdBF9ZToCEywbf2VWek5HwI3e2ufJmtOijEE_7__8_2AJjaObVPEQ4HWyHOHmaCe/root\",\n  \"expirationDateTime\": \"2026-01-15T23:59:59Z\",\n  \"clientState\": \"sharepoint-zei-soporte\"\n}",
+        "options": {}
+      },
+      "id": "915ee1fd-8180-4cb5-9c6b-ab294d623170",
+      "name": "06 - Crear Suscripción Graph",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        160,
+        464
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "oAuth2Api": {
+          "id": "rtxDh1vSk3F4bb0q",
+          "name": "Conexion SharePoint"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { key: 'sharepoint_zei_subscription', value: { subscriptionId: $json.id, expiration: $json.expirationDateTime } }}];"
+      },
+      "id": "f0515137-ea19-4036-a833-089ba87ccbfc",
+      "name": "07 - Guardar SubscriptionId",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        400,
+        464
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://graph.microsoft.com/v1.0/subscriptions/{{ $json.subscriptionId }}\n",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "expirationDateTime",
+              "value": "={{ $json.expirationDateTime }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "975ca8fa-33f5-4ffd-94f6-1fd3d6ccfec6",
+      "name": "11 - Renovar Suscripción Graph",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        512,
+        896
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "oAuth2Api": {
+          "id": "rtxDh1vSk3F4bb0q",
+          "name": "Conexion SharePoint"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "console.log('Suscripción renovada:', $json); return $input.all();"
+      },
+      "id": "c4f727b2-573d-4dbc-9ccc-a711ffc48eb9",
+      "name": "12 - Log Renovación",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        736,
+        896
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c",
+          "mode": "list",
+          "cachedResultName": "Suscripcion Graph",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "subscriptionId": "={{ $json.value.subscriptionId }}",
+            "expiration": "={{ $json.value.expiration }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "subscriptionId",
+              "displayName": "subscriptionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "expiration",
+              "displayName": "expiration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        464
+      ],
+      "id": "db474eca-38c6-4a4e-a6f5-d8b555aa0720",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c",
+          "mode": "list",
+          "cachedResultName": "Suscripcion Graph",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jYiH3fzg3wtr-xxvDBNBY_JL4qJNka716p-qU144J0c/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        112,
+        896
+      ],
+      "id": "f137f70f-9438-4479-85f6-04f6a492da7f",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sharepoint-bc-zei-soporte-fw",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1024,
+        480
+      ],
+      "id": "6775a5d1-707c-4aea-89d8-9af262256b53",
+      "name": "Webhook1",
+      "webhookId": "f7806dad-e4d7-4750-95d9-6a1b51b5ef92",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Crear suscripcion\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 384,
+        "width": 1104
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -176,
+        336
+      ],
+      "typeVersion": 1,
+      "id": "c0c628b7-4409-42db-aaa7-d1249f72075a",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Validacion del webhook se activa una sola vez\n",
+        "height": 384,
+        "width": 784
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        960,
+        336
+      ],
+      "typeVersion": 1,
+      "id": "54a06b3c-6964-441d-aac8-224c6c813a2f",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Renovar Suscripcion Automatica",
+        "height": 384,
+        "width": 1104
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -176,
+        752
+      ],
+      "typeVersion": 1,
+      "id": "e5c741f4-8d6f-4601-aaae-c96c13fed5e7",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const token = $json?.query?.validationToken;\n\nif (token) {\n  // Graph exige texto plano, no JSON\n  return [\n    {\n      json: {\n        statusCode: 200,\n        headers: { \"Content-Type\": \"text/plain\" },\n        body: token\n      }\n    }\n  ];\n}\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        480
+      ],
+      "id": "eed49df5-97aa-405f-88f0-946e6db98ecd",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.body }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1440,
+        480
+      ],
+      "id": "b1a86746-97ce-4e09-9f94-c152ee1f429d",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener la fila donde guardaste la suscripción\nconst data = $input.first().json;\n\n// Extraer subscriptionId\nconst subscriptionId = data.subscriptionId || data.value?.subscriptionId;\n\nif (!subscriptionId) {\n  throw new Error(\"No se encontró subscriptionId en la hoja. No se puede renovar.\");\n}\n\n// Tomar la fecha de expiración actual desde el nodo anterior\n// Ajusta el nombre del campo si en tu hoja se llama distinto\nconst currentExpiration =\n  data.expiration ||         // ej: columna \"expiration\"\n  data.expirationDateTime || // por si usas este nombre\n  data.value?.expiration;\n\nif (!currentExpiration) {\n  throw new Error(\"No se encontró la fecha de expiración actual.\");\n}\n\n// Parsear la fecha ISO que viene del nodo anterior\nconst baseDate = new Date(currentExpiration);\nif (isNaN(baseDate.getTime())) {\n  throw new Error(`La fecha de expiración no es válida: ${currentExpiration}`);\n}\n\n// Calcular nueva fecha de expiración -> fecha actual + 30 días\nconst newExpiration = new Date(baseDate.getTime() + 30 * 24 * 60 * 60 * 1000);\nconst expirationISO = newExpiration.toISOString();\n\n// Devolver datos para el nodo PATCH\nreturn [\n  {\n    json: {\n      subscriptionId,\n      expirationDateTime: expirationISO\n    }\n  }\n];\n\n\nreturn [\n  {\n    json: {\n      subscriptionId,\n      expirationDateTime: expirationISO\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        896
+      ],
+      "id": "04f1f82d-e239-4598-8d3e-877389ed547b",
+      "name": "Preparar renovación"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyMonth",
+              "hour": 6,
+              "dayOfMonth": 14
+            }
+          ]
+        }
+      },
+      "id": "b735e9c2-1cc7-4759-b5aa-6e2fbdce22e7",
+      "name": "09 - Trigger Renovación  mensual",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -80,
+        896
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-12-18T17:50:50.915Z",
+      "updatedAt": "2025-12-18T17:50:50.915Z",
+      "role": "workflow:owner",
+      "workflowId": "DR01FlRs5le25nYg",
+      "projectId": "IcIKCrtLDXlTBTP5"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-23T00:57:04.000Z",
+  "versionId": "e8f14369-f8df-47fc-922e-dfb2f5ef44d1"
+}
