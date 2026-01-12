@@ -1,0 +1,1174 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Message Types1": {
+      "main": [
+        [
+          {
+            "node": "Lookup MQL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reply To User3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Sales Agent1": {
+      "main": [
+        [
+          {
+            "node": "Reply To User2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Handle Message Types1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup MQL1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decide Mode & Build Prompt1": {
+      "main": [
+        [
+          {
+            "node": "AI Sales Agent1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Extract Chat Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Chat Data1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Sales Agent": {
+      "main": [
+        [
+          {
+            "node": "Reply To User",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Decide Mode & Build Prompt1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Sales Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Sales Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Sales Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Sales Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-09T03:23:49.976Z",
+  "id": "hO2y4dLqA6e5Alkw",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 12",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "### 3a. Manejar Tipos de Mensajes No Compatibles\nPara los mensajes que no son de texto, simplemente responderemos con un mensaje sencillo para informar al remitente.",
+        "height": 151,
+        "width": 338,
+        "color": 7
+      },
+      "id": "b0ab284b-5769-458f-8003-c3f39c20a376",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -368,
+        1056
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "2. El agente de IA de ventas responde a los clientes\n\n\nLos agentes de IA de n8n son nodos potentes que facilitan increíblemente el uso de la IA de última generación en sus flujos de trabajo. No solo tienen la capacidad de recordar conversaciones por cliente individual, sino que también aprovechan recursos como nuestro almacén de vectores del catálogo de productos para extraer información objetiva y datos para cada pregunta.\n\nUtilizamos un agente de IA que está dirigido a ayudar al usuario a navegar por el folleto del producto. Se adjunta un subnodo de memoria de chat para identificar y realizar un seguimiento de la sesión del cliente. Se agrega una herramienta de almacén de vectores para permitir que el agente acceda a la base de conocimientos del catálogo de productos que creamos anteriormente.",
+        "height": 1185,
+        "width": 891,
+        "color": 6
+      },
+      "id": "eb926214-fa44-4b2d-b822-cecc9deab0e1",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "2. Responder al usuario de WhatsApp\n\nEl nodo de WhatsApp es la opción ideal si quieres interactuar con usuarios de WhatsApp. Con este nodo, puedes enviar mensajes de texto, imágenes, audio y vídeo, así como utilizar tus plantillas de mensajes de WhatsApp.\n\nAquí, lo mantendremos sencillo respondiendo con un mensaje de texto que es la salida del agente de IA.",
+        "height": 484.1875,
+        "width": 495.4375
+      },
+      "id": "57b5f373-3904-4366-b053-8348f7e60235",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        960,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Activa tu flujo de trabajo para usarlo!\nPara comenzar a usar el chatbot de WhatsApp, deberás activar el flujo de trabajo. Si te auto-hospedas, asegúrate de que WhatsApp pueda conectarse a tu servidor.\n",
+        "height": 107.02804651162779,
+        "width": 364.6293255813954,
+        "color": 5
+      },
+      "id": "806198e6-5991-408a-9373-ea6666277a37",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -576,
+        912
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "3. Usa el disparador de WhatsApp\n\n\nEl disparador de WhatsApp te permite recibir mensajes entrantes de WhatsApp de tus clientes. Requiere un poco de configuración, ¡así que recuerda seguir la documentación cuidadosamente! Sin embargo, una vez listo, es bastante fácil construir flujos de trabajo potentes que sean fácilmente accesibles para los usuarios.\n\nTen en cuenta que WhatsApp puede enviar muchos tipos de mensajes, como audio y vídeo, por lo que en esta demostración, los filtraremos y solo aceptaremos los mensajes de texto.",
+        "height": 484.1875,
+        "width": 546.6875,
+        "color": 4
+      },
+      "id": "fae907bd-5c1b-45d0-afb6-ce7da64767e5",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -592,
+        384
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-2024-08-06",
+        "options": {}
+      },
+      "id": "12892201-e9ca-4310-bd21-c2385eb87d09",
+      "name": "OpenAI Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        432,
+        768
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=whatsapp-75-{{ $json.messages[0].from }}"
+      },
+      "id": "7f4e17c8-efa8-41f6-b2f1-309bcc1c885c",
+      "name": "Window Buffer Memory1",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        528,
+        768
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "name": "query_product_brochure",
+        "description": "Llama a esta herramienta para consultar el folleto del producto."
+      },
+      "id": "622d8283-367d-4be3-b361-f635f2bb7b6e",
+      "name": "Vector Store Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "position": [
+        656,
+        768
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "e57fef90-1e00-4daa-8f91-65c538d8c647",
+      "name": "Embeddings OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        496,
+        1088
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-2024-08-06",
+        "options": {}
+      },
+      "id": "a9fa87aa-fe90-452c-b37b-f7beed8b6ec6",
+      "name": "OpenAI Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        848,
+        928
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "102646042734013",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').item.json.messages[0].from }}",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {
+          "previewUrl": false
+        }
+      },
+      "id": "a18f82c3-53f2-425b-9aa0-175ce640c628",
+      "name": "Reply To User2",
+      "type": "n8n-nodes-base.whatsApp",
+      "position": [
+        1152,
+        560
+      ],
+      "typeVersion": 1,
+      "webhookId": "6e14d66d-402a-4902-b5d8-0a2bb5093a04",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "tk6zrwxJLxGE2YuG",
+          "name": "WhatsApp account_TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "102646042734013",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').item.json.messages[0].from }}",
+        "textBody": "=I'm unable to process non-text messages. Please send only text messages. Thanks!",
+        "additionalFields": {
+          "previewUrl": false
+        }
+      },
+      "id": "7973d647-4550-455b-b8f9-80f07e5162c4",
+      "name": "Reply To User3",
+      "type": "n8n-nodes-base.whatsApp",
+      "position": [
+        32,
+        1040
+      ],
+      "typeVersion": 1,
+      "webhookId": "8c255a5e-2062-48b2-bf98-abb7018cf9c0",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "tk6zrwxJLxGE2YuG",
+          "name": "WhatsApp account_TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "text",
+                    "id": "85c7c02c-63f4-4313-96c9-98b063c88444"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Supported"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "89971d8c-a386-4e77-8f6c-f491a8e84cb6",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEquals"
+                    },
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "text"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Not Supported"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8eec775f-e434-4a2e-9d9d-65e50a4cb876",
+      "name": "Handle Message Types1",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        -272,
+        672
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{   $('Decide Mode & Build Prompt1').item.json.mode === 'qualification'   && $('Decide Mode & Build Prompt1').item.json.currentState?.pending_question   ? (       $('Decide Mode & Build Prompt1').item.json.currentState.pending_question === 'razon_social'         ? '¿Cuál es el nombre de tu empresa o razón social?'         : ( $('Decide Mode & Build Prompt1').item.json.currentState.pending_question === 'giro_negocio'             ? '¿A qué se dedica tu empresa? Me gustaría conocer su giro de negocio.'             : '¿Tienes un correo corporativo donde pueda contactarte?'           )     )   : ( $('Decide Mode & Build Prompt1').item.json.userMessage || $json.messages[0].text.body ) }}",
+        "options": {
+          "systemMessage": "={{ $('Decide Mode & Build Prompt1').item.json.systemMessage }}"
+        }
+      },
+      "id": "14d37182-95c8-4a3a-8b61-79a77e537c9f",
+      "name": "AI Sales Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        576,
+        560
+      ],
+      "typeVersion": 1.6
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {
+          "messageStatusUpdates": [
+            "all",
+            "read"
+          ]
+        }
+      },
+      "id": "c255a23c-1a80-44c9-82e6-5bb60327545b",
+      "name": "WhatsApp Trigger1",
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "position": [
+        -480,
+        672
+      ],
+      "webhookId": "aaa71f03-f7af-4d18-8d9a-0afb86f1b554",
+      "typeVersion": 1,
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "kTsS3qhdfuvH39pc",
+          "name": "WhatsApp OAuth_MKT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "brochure-index-llama",
+          "mode": "list",
+          "cachedResultName": "brochure-index-llama"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        928
+      ],
+      "id": "f4ae1e1b-bc61-4f7b-9ffb-26423b5f88bf",
+      "name": "Pinecone Vector Store1",
+      "credentials": {
+        "pineconeApi": {
+          "id": "bqNx5oAwXmTYQGz2",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "lookup",
+        "sheetId": "1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg",
+        "range": "Hoja 1",
+        "lookupColumn": "phone",
+        "lookupValue": "={{ $json.messages[0].from }}",
+        "options": {}
+      },
+      "id": "43db4f3c-61cf-4938-b921-094a6c9ba516",
+      "name": "Lookup MQL1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        48,
+        560
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lee fila del Sheet (si existe) y decide el modo con análisis de conversación\nlet row = {};\nlet isNewContact = false;\n\ntry {\n  const lookupResult = $input.first();\n  if (lookupResult?.json && Object.keys(lookupResult.json).length > 1) {\n    row = lookupResult.json;\n    isNewContact = false;\n  } else {\n    isNewContact = true;\n    row = {};\n  }\n} catch (error) {\n  console.log('No se encontró registro para este teléfono - contacto nuevo');\n  isNewContact = true;\n  row = {};\n}\n\nconst toBool = v => v === true || `${v}`.trim().toLowerCase() === \"true\";\nconst rawPhone = $('WhatsApp Trigger1').item.json.messages[0].from || \"\";\nconst phone = rawPhone.startsWith('+') ? rawPhone : `+${rawPhone}`;\n\nconst EMAIL_RX = /^[\\w.-]+@([\\w-]+\\.)+[\\w-]{2,}$/;\n\n// Estado actual\nconst currentState = {\n  // Flags\n  MQL1: isNewContact ? false : toBool(row.MQL1),\n  MQL2: isNewContact ? false : toBool(row.MQL2),\n  OK:   isNewContact ? false : toBool(row.OK),\n\n  // Datos empresa\n  razon_social:       isNewContact ? \"\" : (row.razon_social || \"\"),\n  giro_negocio:       isNewContact ? \"\" : (row.giro_negocio || \"\"),\n  correo_corporativo: isNewContact ? \"\" : (row.correo_corporativo || \"\"),\n  empresa:            isNewContact ? \"\" : (row.empresa || \"\"),\n  industria:          isNewContact ? \"\" : (row.industria || \"\"),\n  empleados:          isNewContact ? \"\" : (row.empleados || \"\"),\n\n  // Contacto\n  email:  isNewContact ? \"\" : (row.email || \"\"),\n  phone,\n\n  // Conversación\n  attemps:          isNewContact ? 0 : (row.attemps ? parseInt(row.attemps) : 0),\n  current_step:     isNewContact ? 0 : (row.current_step ? parseInt(row.current_step) : 0),\n  pending_question: isNewContact ? \"\" : (row.pending_question || \"\"),\n\n  // Metadatos\n  id_lead:          row.id_lead || \"\",\n  presencia_redes:  isNewContact ? false : toBool(row[\"Presencia en redes\"] ?? row.presencia_redes),\n  update_lead:      row.update_lead || \"\",\n  ip:               row.ip || \"\"\n};\n\nconst userMessage = $('WhatsApp Trigger1').item.json.messages[0]?.text?.body || \"\";\n\n// Definición de las 3 preguntas (todas requeridas)\nconst questions = [\n  {\n    key: 'razon_social',\n    question: '¿Cuál es el nombre de tu empresa o razón social?',\n    followUp: '¿Me confirmas el nombre completo de tu empresa?',\n    validator: (text) => (text || \"\").trim().length >= 2,\n    required: true,\n    saveTo: ['razon_social', 'empresa']\n  },\n  {\n    key: 'giro_negocio',\n    question: '¿A qué se dedica tu empresa? Me gustaría conocer su giro de negocio.',\n    followUp: '¿Podrías contarme la actividad principal de tu negocio?',\n    validator: (text) => (text || \"\").trim().length >= 3,\n    required: true,\n    saveTo: ['giro_negocio', 'industria']\n  },\n  {\n    key: 'correo_corporativo',\n    question: '¿Tienes un correo corporativo donde pueda contactarte?',\n    followUp: '¿Me compartes tu correo corporativo para enviarte la info?',\n    validator: (text) => EMAIL_RX.test((text || \"\").trim()),\n    required: true, // ← ahora es requerida para pasar a answer\n    saveTo: ['correo_corporativo', 'email']\n  }\n];\n\n// 1) Procesar respuesta si había una pregunta pendiente\nif (currentState.pending_question && userMessage.trim()) {\n  const q = questions.find(q => q.key === currentState.pending_question);\n  if (q) {\n    if (q.validator(userMessage)) {\n      const value = userMessage.trim();\n      q.saveTo.forEach(field => { currentState[field] = value; });\n      currentState.pending_question = \"\";\n      currentState.current_step++;\n      currentState.attemps = 0; // reset\n    } else {\n      currentState.attemps++;\n    }\n  }\n}\n\n// 2) Calcular qué falta\nconst missing = questions.filter(q => q.required && !(currentState[q.key] && (q.key !== 'correo_corporativo' || EMAIL_RX.test(currentState[q.key]))));\n\n// 3) Si no hay pregunta pendiente y aún faltan datos, setear la siguiente\nif (!currentState.pending_question && currentState.attemps < 3 && missing.length > 0) {\n  currentState.pending_question = missing[0].key;\n}\n\n// 4) Estatus de calificación y modo\nconst hasRazonYGiro = !!(currentState.razon_social && currentState.giro_negocio);\nif (hasRazonYGiro) currentState.MQL1 = true;\nif (currentState.correo_corporativo && EMAIL_RX.test(currentState.correo_corporativo)) currentState.MQL2 = true;\n\n// Para pasar a answer exigimos las 3 (incluye email válido)\nconst hasAllThree =\n  !!currentState.razon_social &&\n  !!currentState.giro_negocio &&\n  !!currentState.correo_corporativo &&\n  EMAIL_RX.test(currentState.correo_corporativo);\n\nlet finalMode = 'qualification';\nlet modePrefix = '🎯 MODO=';\n\nif (hasAllThree) {\n  finalMode = 'answer';\n  modePrefix += 'answer_qualified';\n} else if (currentState.attemps >= 3) {\n  // No bloquear conversación eternamente: responde y sigue intentando luego\n  finalMode = 'qualification';\n  modePrefix += 'qualification_max_attempts';\n} else {\n  finalMode = 'qualification';\n  modePrefix += currentState.current_step === 0 ? 'first_contact' : 'qualification';\n}\n\n// 5) Mensaje del sistema (para el Agente)\nconst AGENDA = \"👉 Agendar reunión con Mobilvendor https://outlook.office365.com/book/Mobilvendor_Comercial@mobilvendor.com/?ismsaljsauthenabled=true\";\n\nconst base = `Eres un asistente virtual de Mobilvendor para WhatsApp.\nUsa EXCLUSIVAMENTE la herramienta de búsqueda del folleto (vector store) para responder consultas sobre productos y servicios.\nSi algo no está en la base de conocimiento, responde: \"Lo siento, no dispongo de esa información en este momento.\"\nNo inventes información.\n\nPara contacto directo o demos: ${AGENDA}\n\nEstilo: conciso, claro, cercano, apropiado para WhatsApp.`;\n\nconst nextQ = questions.find(q => q.key === currentState.pending_question);\nconst qualificationInfo = `\nESTADO DE INFORMACIÓN:\n- Razón Social: ${currentState.razon_social ? '✅' : '❌'} ${currentState.razon_social || 'Pendiente'}\n- Giro Negocio: ${currentState.giro_negocio ? '✅' : '❌'} ${currentState.giro_negocio || 'Pendiente'}\n- Email Corp.: ${currentState.correo_corporativo ? (EMAIL_RX.test(currentState.correo_corporativo) ? '✅' : '⚠️ inválido') : '❌ Pendiente'}\n- Intentos: ${currentState.attemps}/3\n- Paso: ${currentState.current_step}/3\n\nINSTRUCCIONES:\n1. Primero responde brevemente su consulta usando el folleto (vector store).\n2. Después, ${nextQ ? `pregunta de forma natural: \"${currentState.attemps > 0 ? nextQ.followUp : nextQ.question}\"` : 'continúa la conversación normalmente'}.\n3. Máximo UNA pregunta por mensaje.\n4. Si el usuario no tiene algún dato, continúa sin problema, pero intenta obtenerlo luego.\n5. Sé amable y profesional.`;\n\nconst systemMessage = [\n  base,\n  `\\n${modePrefix}`,\n  finalMode === 'qualification' ? qualificationInfo : '\\nResponde directamente con información del folleto. El usuario está calificado (3/3).'\n].join('\\n');\n\nreturn {\n  json: {\n    systemMessage,\n    mode: finalMode,\n    MQL1: currentState.MQL1,\n    MQL2: currentState.MQL2,\n    currentState,\n    nextQuestion: nextQ ? { key: nextQ.key } : null,\n    hasAllThree,\n    userMessage: userMessage.substring(0, 200) + (userMessage.length > 200 ? \"...\" : \"\"),\n    debug: {\n      attemps: currentState.attemps,\n      current_step: currentState.current_step,\n      pending_question: currentState.pending_question,\n      hasRazonYGiro,\n      hasAllThree\n    }\n  }\n};\n"
+      },
+      "id": "9ec40d5f-14bc-4a8e-afef-cc23539ab5ca",
+      "name": "Decide Mode & Build Prompt1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        256,
+        560
+      ],
+      "alwaysOutputData": true,
+      "properties": {
+        "mode": "runOnceForAllItems",
+        "language": "JavaScript"
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "/**\n * Extract Chat Data1 (FIXED)\n */\nfunction digitsOnly(s) {\n  return (s || \"\").replace(/\\D/g, \"\");\n}\n\nconst trigger = $('WhatsApp Trigger1').item;\nconst msgFrom = (trigger?.json?.messages?.[0]?.from) || \"\";\nconst contactWaId = (trigger?.json?.contacts?.[0]?.wa_id) || \"\";\nlet phoneRaw = msgFrom || contactWaId || \"\";\nlet phone = digitsOnly(phoneRaw);\n\nlet prev = {};\ntry { prev = $input.first()?.json ?? {}; } catch (e) { prev = {}; }\n\nconst cs = prev.currentState || {};\n\nconst out = {\n  phone, // sin '+'\n  attemps: Number.isFinite(Number(cs.attemps)) ? Number(cs.attemps) : 0,\n  current_step: cs.current_step ?? 0,\n  pending_question: cs.pending_question ?? \"\",\n  mode: prev.mode || \"qualification\",\n  MQL1: (typeof prev.MQL1 !== \"undefined\") ? prev.MQL1 : (cs.MQL1 ?? \"\"),\n  MQL2: (typeof prev.MQL2 !== \"undefined\") ? prev.MQL2 : (cs.MQL2 ?? \"\"),\n  OK: cs.OK ?? \"\",\n  razon_social: cs.razon_social || \"\",\n  giro_negocio: cs.giro_negocio || \"\",\n  correo_corporativo: cs.correo_corporativo || \"\",\n  email: cs.email || cs.correo_corporativo || \"\",\n  nombreempresa: cs.empresa || cs.razon_social || \"\",\n  industria: cs.industria || cs.giro_negocio || \"\",\n  empleados: cs.empleados ?? \"\",\n  ip: cs.ip ?? \"\",\n  \"Presencia en redes\": cs.presencia_redes ?? \"\",\n  id_lead: cs.id_lead ?? \"\",\n  update_lead: cs.update_lead ?? \"\",\n  is_new_contac: prev.is_new_contac ?? false,\n  last_message: prev.userMessage || \"\",\n  skipUpdate: prev.skipUpdate ?? false,\n};\n\nreturn [{ json: out }];\n"
+      },
+      "id": "9b970573-601d-4730-b9db-2c9655e2341a",
+      "name": "Extract Chat Data1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        464,
+        256
+      ],
+      "alwaysOutputData": true,
+      "properties": {
+        "mode": "runOnceForAllItems",
+        "language": "JavaScript"
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg",
+          "mode": "list",
+          "cachedResultName": "MQL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Jbi-HBW-Zd1ZurohDXfIf6P5y05_OsYdG6lPEhpIJGg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineInNode",
+          "value": {
+            "phone": "={{ $json.phone }}",
+            "razon_social": "={{ $json.razon_social }}",
+            "giro_negocio": "={{ $json.giro_negocio }}",
+            "correo_corporativo": "={{ $json.correo_corporativo }}",
+            "email": "={{ $json.email }}",
+            "nombreempresa": "={{ $json.nombreempresa }}",
+            "industria": "={{ $json.industria }}",
+            "empleados": "={{ $json.empleados }}",
+            "ip": "={{ $json.ip }}",
+            "MQL1": "={{ $json.MQL1 }}",
+            "Presencia en redes": "={{ $json['Presencia en redes'] }}",
+            "MQL2": "={{ $json.MQL2 }}",
+            "OK": "={{ $json.OK }}",
+            "id_lead": "={{ $json.id_lead }}",
+            "update_lead": "={{ $json.update_lead }}",
+            "attemps": "={{ $json.attemps }}",
+            "current_step": "={{ $json.current_step }}",
+            "pending_question": "={{ $json.pending_question }}",
+            "mode": "={{ $json.mode }}",
+            "is_new_contac": "={{ $json.is_new_contac }}",
+            "last_message": "={{ $json.last_message }}",
+            "skipUpdate": "={{ $json.skipUpdate }}"
+          },
+          "matchingColumns": [
+            "phone"
+          ],
+          "schema": [
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre",
+              "displayName": "nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "empresa",
+              "displayName": "empresa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "industria",
+              "displayName": "industria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "empleados",
+              "displayName": "empleados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ip",
+              "displayName": "ip",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MQL1",
+              "displayName": "MQL1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Presencia en redes",
+              "displayName": "Presencia en redes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MQL2",
+              "displayName": "MQL2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "OK",
+              "displayName": "OK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "id_lead",
+              "displayName": "id_lead",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "update_lead",
+              "displayName": "update_lead",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "razon_social",
+              "displayName": "razon_social",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "giro_negocio",
+              "displayName": "giro_negocio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "correo_corporativo",
+              "displayName": "correo_corporativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "attemps",
+              "displayName": "attemps",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "current_step",
+              "displayName": "current_step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pending_question",
+              "displayName": "pending_question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_new_contac",
+              "displayName": "is_new_contac",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "last_message",
+              "displayName": "last_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "skipUpdate",
+              "displayName": "skipUpdate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_new_contact",
+              "displayName": "is_new_contact",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        256
+      ],
+      "id": "ba76e5db-dbe5-42b4-822e-272203849a5d",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fm3jifX2nPTobuSZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('WhatsApp Trigger1').item.json.messages[0].text.body }}",
+        "options": {
+          "systemMessage": "=Eres un asistente virtual especializado que trabaja para Mobilvendor, empresa dedicada al desarrollo de soluciones tecnológicas para la gestión empresarial.\n\nReglas de funcionamiento:\n\nResponde únicamente con la información proporcionada internamente.\n\nSi no tienes información disponible para responder, di de forma breve y clara:\n“Lo siento, no dispongo de esa información en este momento.”\n\nNunca inventes respuestas ni uses información externa.\n\nTu objetivo no es facilitar una venta. Sin embargo, si el usuario solicita información de contacto, demos, reuniones o asesoría comercial, dirígelo de manera clara a:\n👉 https://outlook.office365.com/book/Mobilvendor_Comercial@mobilvendor.com/?ismsaljsauthenabled=true\n\nEstilo de respuesta:\n\nProfesional, conciso y confiable.\n\nTono cercano, natural y corporativo."
+        }
+      },
+      "id": "60629012-1c79-424e-96e6-baef67360677",
+      "name": "AI Sales Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        592,
+        1328
+      ],
+      "typeVersion": 1.6
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "102646042734013",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').item.json.messages[0].from }}",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {
+          "previewUrl": false
+        }
+      },
+      "id": "7596f9d9-5f8c-4d5f-bee3-20d09b8b9008",
+      "name": "Reply To User",
+      "type": "n8n-nodes-base.whatsApp",
+      "position": [
+        1200,
+        1328
+      ],
+      "typeVersion": 1,
+      "webhookId": "6e14d66d-402a-4902-b5d8-0a2bb5093a04",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "tk6zrwxJLxGE2YuG",
+          "name": "WhatsApp account_TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a4bc59bb-f52d-46b6-a49d-fdf5c438a8a2",
+              "leftValue": "={{ $json.MQL1 }}",
+              "rightValue": "FALSE",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        96,
+        816
+      ],
+      "id": "3d5af700-7fa7-465b-b888-6c57475a62f8",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        1536
+      ],
+      "id": "4736d449-de86-4c20-8aa6-b8b43fe92af6",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=whatsapp-75-{{ $json.messages[0].from }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        1536
+      ],
+      "id": "509902b1-3cdf-4327-b744-d5f633bbe897",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "name": "query_product_brochure",
+        "description": "Llama a esta herramienta para consultar el folleto del producto."
+      },
+      "id": "a18e5472-2444-4e2c-b221-d5c8b42421ae",
+      "name": "Vector Store Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "position": [
+        720,
+        1664
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "6a225f50-1771-4acf-828c-a06016f17f0c",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        560,
+        1984
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-2024-08-06",
+        "options": {}
+      },
+      "id": "f4bd68a2-24fa-4b57-99f1-9fff6347155e",
+      "name": "OpenAI Chat Model4",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        912,
+        1824
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "ESQcfuiJYPWo7F8F",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "brochure-index-llama",
+          "mode": "list",
+          "cachedResultName": "brochure-index-llama"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        576,
+        1824
+      ],
+      "id": "c14b7615-fa9a-45d1-8416-42ba364111f0",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "bqNx5oAwXmTYQGz2",
+          "name": "PineconeApi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-09T03:23:49.982Z",
+      "updatedAt": "2025-09-09T03:23:49.982Z",
+      "role": "workflow:owner",
+      "workflowId": "hO2y4dLqA6e5Alkw",
+      "projectId": "IcIKCrtLDXlTBTP5"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-09T03:26:37.000Z",
+  "versionId": "3f8e2052-67ff-45e6-b9d2-fda4bc222547"
+}
